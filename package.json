@@ -1,0 +1,30 @@
+{
+  "name": "Inviter",
+  "version": "1.0.0",
+  "description": "This is the progect that will help people to create invites to a lot of events like weddings, parties and so on.",
+  "author": "Levitina Veronika <levitinava@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@nuxtjs/vuetify": "^0.5.5",
+    "axios": "^0.18.0",
+    "nuxt": "^2.0.0",
+    "vuetify": "^1.5.14"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^4.19.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
+  }
+}
