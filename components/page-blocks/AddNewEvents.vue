@@ -33,6 +33,7 @@
           {
             id: '1',
             title: 'Wedding',
+            link: 'weddings',
             shortDescription:
               'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             description:
@@ -42,6 +43,7 @@
           {
             id: '2',
             title: 'Corporate party',
+            link: 'Corporate',
             shortDescription:
               'Lorem ipsum dolor sit amet, consectetur.',
             description:

@@ -1,5 +1,7 @@
 <template>
-  <v-list class="pa-1">
+  <v-list
+    class="pa-1"
+  >
     <v-list-tile avatar>
       <v-list-tile-avatar>
         <img src="https://randomuser.me/api/portraits/men/85.jpg">

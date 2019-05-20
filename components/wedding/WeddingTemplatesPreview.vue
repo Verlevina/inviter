@@ -1,82 +1,74 @@
 <template>
   <v-container
-    grid-list-xl
+    class="template"
+    grid-list-md
     fluid>
-  <v-layout row wrap>
+  <v-layout
+    row
+    wrap
+    justify-space-around
+  >
     <v-flex
       d-flex
-      sm3
+      sm6
+      md4
+      xs12
+      lg3
+      xl2
       v-for="weddingTemplate in weddingTemplates"
-      :key="weddingTemplate.title"
+      :key="weddingTemplate.id"
     >
-      <v-card to="/">
-        <v-img
-          :src="weddingTemplate.src"
-
-        >
-          <v-container
-            fill-height
-            fluid
-            pa-2
-          >
-            <v-layout fill-height>
-              <v-flex xs12 align-end flexbox>
-                <span class="headline white--text" v-text="weddingTemplate.title"></span>
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </v-img>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn icon>
-            <v-icon>favorite</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon>bookmark</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon>share</v-icon>
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+      <WeddingTemplatePreview
+      :card="weddingTemplate"
+      ></WeddingTemplatePreview>
     </v-flex>
   </v-layout>
   </v-container>
 </template>
 
 <script>
-  export  default  {
-    data(){
+  import WeddingTemplatePreview from '~/components/wedding/WeddingTemplatePreview'
+  export  default {
+    data() {
       return {
         weddingTemplates: [
           {
+            id: '1',
             title: 'template 1',
-            src: 'https://static.wixstatic.com/media/fd83149d8529703ef54f6ae9c7aab39d4e281be276e618788fca14bffa0c72d2.jpg'
+            src:
+              'https://static.wixstatic.com/media/fd83149d8529703ef54f6ae9c7aab39d4e281be276e618788fca14bffa0c72d2.jpg',
+            description: ''
+          },
+          {
+            id: '2',
+            title: 'template 2',
+            src: 'https://cs2.livemaster.ru/storage/4d/ac/f074ba53451200cb97c13dba9cry--svadebnyj-salon-priglashenie-na-svadbu.jpg'
 
           },
           {
+            id: '3',
             title: 'template 1',
-            src: 'https://static.wixstatic.com/media/fd83149d8529703ef54f6ae9c7aab39d4e281be276e618788fca14bffa0c72d2.jpg'
+            src: 'https://www.crazy-nevesta.ru/upload/resize_cache/iblock/ab7/500_500_2/ab73af12f53991afd875681b40972f77.jpg'
 
           },
           {
+            id: '4',
             title: 'template 1',
-            src: 'https://static.wixstatic.com/media/fd83149d8529703ef54f6ae9c7aab39d4e281be276e618788fca14bffa0c72d2.jpg'
+            src: 'http://svadba-sovet.ru/wp-content/uploads/2017/06/Priglashenie-na-svadbu-44.jpg'
 
           },
           {
-            title: 'template 1',
-            src: 'https://static.wixstatic.com/media/fd83149d8529703ef54f6ae9c7aab39d4e281be276e618788fca14bffa0c72d2.jpg'
-
-          },
-          {
+            id: '5',
             title: 'template 1',
             src: 'https://static.wixstatic.com/media/fd83149d8529703ef54f6ae9c7aab39d4e281be276e618788fca14bffa0c72d2.jpg'
 
           },
         ]
       }
+    },
+    components: {
+      WeddingTemplatePreview
     }
   }
 </script>
+

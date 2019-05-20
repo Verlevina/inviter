@@ -1,11 +1,14 @@
 <template>
-  <v-toolbar class="toolbar">
+  <v-toolbar
+    class="toolbar"
+    @click="$router.push('/')"
+  >
     <v-toolbar-side-icon
       class="hidden-md-and-up"
       @click="$emit('toggleMenu')"
     ></v-toolbar-side-icon>
     <v-toolbar-title>
-      <h2>
+      <h2 class="toolbar--title">
         Inviter
       </h2>
     </v-toolbar-title>
@@ -31,6 +34,17 @@
 </script>
 <style scoped>
   .toolbar{
-    z-index: 99
+    z-index: 99;
+
+  }
+  .toolbar--title {
+    cursor: pointer;
+    text-shadow: 1px 1px 1px grey;
+  }
+
+  .toolbar--title:hover,
+  .toolbar--title:active,
+  .toolbar--title:focus {
+text-shadow: 3px 3px 3px grey;
   }
 </style>
