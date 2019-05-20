@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar>
+  <v-toolbar class="toolbar">
     <v-toolbar-side-icon
       class="hidden-md-and-up"
       @click="$emit('toggleMenu')"
@@ -29,3 +29,8 @@
     }
   }
 </script>
+<style scoped>
+  .toolbar{
+    z-index: 999
+  }
+</style>
