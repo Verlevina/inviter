@@ -31,6 +31,6 @@
 </script>
 <style scoped>
   .toolbar{
-    z-index: 999
+    z-index: 99
   }
 </style>

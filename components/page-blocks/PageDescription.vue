@@ -7,9 +7,9 @@
         <h1 class="display-4 text-xs-center">
           Inviter
         </h1>
-        <h2 class="display-1 grey--text text-xs-center mt-5">
+        <p class="display-1 grey--text text-xs-center mt-5">
           This is the project that will help people to create invites to a lot of events like weddings, parties and so on.
-        </h2>
+        </p>
       </section>
     </v-layout>
   </v-container>

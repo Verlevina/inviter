@@ -1,8 +1,104 @@
 <template>
   <div>
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+      class="drawer"
+    >
+      <UserPreview></UserPreview>
+
+      <v-divider></v-divider>
+      <v-list>
+
+        <v-list-tile
+          class="navigation--item"
+        >
+          <v-list-tile-avatar>
+            <i class="material-icons">
+              event
+            </i>
+          </v-list-tile-avatar>
+
+          <v-list-tile-content>
+
+            <v-list-tile-title>Your events</v-list-tile-title>
+            <v-list-tile-sub-title >List of nearest events</v-list-tile-sub-title>
+
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-list-tile
+          class="navigation--item"
+        >
+          <v-list-tile-avatar>
+            <i class="material-icons">
+              add_circle_outline
+            </i>
+          </v-list-tile-avatar>
+
+          <v-list-tile-content>
+            <v-list-tile-title>Create event</v-list-tile-title>
+            <v-list-tile-sub-title ></v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-list-tile
+          class="navigation--item"
+        >
+          <v-list-tile-avatar>
+            <i class="material-icons">
+              filter
+            </i>
+          </v-list-tile-avatar>
+
+          <v-list-tile-content>
+            <v-list-tile-title>Templates</v-list-tile-title>
+            <v-list-tile-sub-title>List of the best events templates</v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-list-tile
+          class="navigation--item"
+        >
+          <v-list-tile-avatar>
+            <i class="material-icons">
+              face
+            </i>
+          </v-list-tile-avatar>
+
+          <v-list-tile-content>
+            <v-list-tile-title>About Project</v-list-tile-title>
+            <v-list-tile-sub-title ></v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+      </v-list>
+    </v-navigation-drawer>
+    <ToolBar
+      app
+      fixed
+      inverted-scroll
+      @toggleMenu="drawer=!drawer"
+    ></ToolBar>
     <nuxt/>
   </div>
 </template>
+<script>
+  import UserPreview from '~/components/user/user-preview.vue'
+  import ToolBar from '~/components/navigation/ToolBar.vue'
+  export default {
+    data() {
+      return {
+        drawer: false
+      }
+    },
+    components: {
+      ToolBar,
+      UserPreview
+    }
+  }
+</script>
 
 <style>
 html {
@@ -20,34 +116,8 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
+  .drawer {
+    z-index: 999
+  }
 </style>
 
