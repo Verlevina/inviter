@@ -1,5 +1,4 @@
 <template>
-
   <v-card
     class="card">
     <v-img
@@ -35,7 +34,6 @@
 
 <script>
   export default {
-
     data(){
       return {
         show: false,
@@ -50,6 +48,7 @@
     }
   }
 </script>
+
 <style scoped lang="scss">
   $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
   $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);

@@ -15,8 +15,8 @@
         v-for="eventTemplate of eventTemplates"
         :key = eventTemplate.key>
         <EventTemplatePreview
-          :eventTemplate="eventTemplate"
-        ></EventTemplatePreview>
+         :eventTemplate="eventTemplate">
+        </EventTemplatePreview>
       </v-flex>
     </v-layout>
   </v-container>
@@ -25,7 +25,7 @@
 <script>
 
 
-  import EventTemplatePreview from '~/components/createEvent/EventTemplatePreview.vue'
+ import EventTemplatePreview from '~/components/createEvent/EventTemplatePreview.vue'
   export default {
     data() {
       return {

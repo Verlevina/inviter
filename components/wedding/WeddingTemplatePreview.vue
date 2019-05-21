@@ -18,7 +18,7 @@
           @click.stop="sendTrialMail(card.id)"
         >Trial Mail</v-btn>
         <v-btn
-          @click.stop="$router.push(`/weddings/${card.id}`)"
+          @click.stop="$router.push(`/weddings/templates/${card.name}`)"
           dark
         >Trial invite sheet</v-btn>
         <v-btn
@@ -81,7 +81,7 @@
     },
     selectTemplate(eventId){
       console.log(`отправка ajax template id: ${eventId}`)
-      this.$router.push(`/weddings/createEvent`)
+      this.$emit('selectTemplate')
   }
   }
   }
@@ -153,6 +153,7 @@
     flex: 0 0 240px;
     width: 240px;
     height: 320px;
+    margin: auto;
     background-color: #333;
     overflow: hidden;
     border-radius: 10px;
@@ -218,10 +219,94 @@
   }
 
   .card-info h1 {
-    font-family: "Playfair Display";
     font-size: 36px;
     font-weight: 700;
     text-shadow: rgba(black, 0.5) 0 10px 10px;
   }
+  @media handheld and (min-width: 600px) {
 
+    .card-wrap {
+      margin: 10px;
+      transform: perspective(800px);
+      transform-style: preserve-3d;
+      cursor: pointer;
+
+      &:hover {
+        .card-info {
+          transform: translateY(0);
+        }
+        .card-info p {
+          opacity: 1;
+        }
+        .card-info, .card-info p {
+          transition: 0.6s $hoverEasing;
+        }
+        .card-info:after {
+          transition: 5s $hoverEasing;
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .card-bg {
+          transition:
+            0.6s $hoverEasing,
+            opacity 2s $hoverEasing;
+          opacity: 0.9;
+        }
+        .card {
+          transition:
+            0.6s $hoverEasing,
+            box-shadow 2s $hoverEasing;
+          box-shadow:
+            rgba(white, 0.2) 0 0 40px 5px,
+            rgba(white, 1) 0 0 0 1px,
+            rgba(black, 1) 0 80px 100px 0,
+            inset #333 0 0 0 5px,
+            inset white 0 0 0 6px;
+        }
+      }
+    }
+
+    .card {
+      position: relative;
+      flex: 0 0 240px;
+      width: 240px;
+      height: 320px;
+      background-color: #333;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow:
+        rgba(black, 0.66) 0 30px 60px 0,
+        inset #333 0 0 0 5px,
+        inset rgba(white, 0.5) 0 0 0 6px;
+      transition: 1s $returnEasing;
+    }
+
+    .card-bg {
+      opacity: 1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      transition:
+        1s $returnEasing,
+        opacity 5s 1s $returnEasing;
+      pointer-events: none;
+    }
+    .card-info {
+      padding: 20px;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      color: #fff;
+      transform: translateY(0);
+      transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    }
 </style>

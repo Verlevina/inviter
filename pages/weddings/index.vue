@@ -9,15 +9,32 @@
       </p>
     </v-container>
     <v-container class="pt-0 mt-0">
-     <WeddingTemplatesPreview></WeddingTemplatesPreview>
+            <WeddingTemplatesPreview
+              @selectTemplate="currentTab = 0"></WeddingTemplatesPreview>
+
+            <WedingInfoGetter></WedingInfoGetter>
+
     </v-container>
   </v-content>
 </template>
 <script>
   import WeddingTemplatesPreview from '~/components/wedding/WeddingTemplatesPreview.vue'
+  import WedingInfoGetter from '~/components/wedding/WedingInfoGetter.vue'
   export default {
+    data(){
+      return {
+        e6: 1
+      }
+    },
     components: {
-      WeddingTemplatesPreview
+      WeddingTemplatesPreview,
+      WedingInfoGetter
+    },
+    methods: {
+      selectTemplate(){
+        console.log(`[page wedding]  selected template - `)
+
+      }
     }
   }
 </script>

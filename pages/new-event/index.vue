@@ -2,26 +2,18 @@
   <div>
     <v-content>
       <v-container class="pt-0 mt-0">
-        <PageDescription></PageDescription>
         <AddNewEvents></AddNewEvents>
       </v-container>
     </v-content>
   </div>
 </template>
 
-<script>
-import UserPreview from '~/components/user/user-preview.vue'
+  <script>
 import AddNewEvents from '~/components/page-blocks/AddNewEvents.vue'
-import PageDescription from '~/components/page-blocks/PageDescription.vue'
-
-
 
 export default {
-
   components: {
-    UserPreview,
-    AddNewEvents,
-    PageDescription
+    AddNewEvents
   }
 }
 </script>

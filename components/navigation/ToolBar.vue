@@ -15,7 +15,9 @@
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn flat>Your events</v-btn>
-      <v-btn flat>Create event</v-btn>
+      <v-btn
+        to="`/new-event`"
+        flat>Create event</v-btn>
       <v-btn flat>Templates</v-btn>
       <v-btn flat>About Project</v-btn>
 
