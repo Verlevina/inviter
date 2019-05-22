@@ -2,18 +2,34 @@
   <v-list
     class="pa-1"
   >
-    <v-list-tile avatar>
-      <v-list-tile-avatar>
-        <img src="https://randomuser.me/api/portraits/men/85.jpg">
-      </v-list-tile-avatar>
-
       <v-list-tile-content>
-        <v-list-tile-title
-          class="title"
+
+        <v-list-tile
+          avatar
+          @click="$router.push('/')"
         >
-          John Leider
-        </v-list-tile-title>
+          <v-list-tile-avatar>
+            <img :src="getUserAvatar">
+          </v-list-tile-avatar>
+
+          <v-list-tile-content>
+            <v-list-tile-title> {{userInfo.name}} </v-list-tile-title>
+            <v-list-tile-sub-title > {{userInfo.email}} </v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
       </v-list-tile-content>
-    </v-list-tile>
   </v-list>
 </template>
+<script>
+  export default {
+    computed: {
+      userInfo() {
+        return this.$store.getters.getUserInfo
+      },
+      getUserAvatar () {
+        return 'https://randomuser.me/api/portraits/lego/' + Math.ceil( Math.random()*5 )+ '.jpg'
+      }
+    }
+  }
+</script>

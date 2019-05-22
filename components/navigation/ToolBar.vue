@@ -18,7 +18,9 @@
       <v-btn
         to="`/new-event`"
         flat>Create event</v-btn>
-      <v-btn flat>Templates</v-btn>
+      <v-btn
+
+        flat>Templates</v-btn>
       <v-btn flat>About Project</v-btn>
 
       <UserPreview></UserPreview>

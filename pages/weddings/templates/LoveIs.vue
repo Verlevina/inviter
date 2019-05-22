@@ -4,12 +4,15 @@
   <v-layout
   wrap>
     <v-flex sm6 xs12>
-      <h3>Love is...</h3>
+      <h3 style="font-size: 40px">Love is...</h3>
       <div class="wedding-names">
 
         <div class="border">
           <div class="border-top"></div>
-          <div class="center"><p> Ivanov Ivan Ivanich & Krishkina Anastasia
+          <div class="center"><p> {{  inviteInfo.bride.name  + ' ' + inviteInfo.bride.surname + ' ' +
+            inviteInfo.bride.fathername}} & {{  inviteInfo.groom.name  + ' ' + inviteInfo.groom.surname + ' ' +
+            inviteInfo.groom.fathername}}
+            Anastasia
             Petrovna</p></div>
           <div class="border-bottom"></div>
         </div>
@@ -18,20 +21,23 @@
       <img src="http://wedding-dream.org/wp-content/uploads/2015/02/svadba-v-stile-love-is-1.jpg" alt="">
     <p>...invite you to our wedding!!!</p>
     </v-flex>
-    <v-flex sm6 class="info-wrapper">
-      <h3>Guest Name!</h3>
+   <v-flex sm6 class="info-wrapper">
+     <h3>{{inviteInfo.guest.name}}
+    {{inviteInfo.guest.surname}}
+    {{inviteInfo.guest.fathername}}!
+    </h3>
       <p>
         It is with great pleasure that we invite you to a solemn event dedicated to our marriage ceremony.</p>
 <img width="100px"
      height="100px"
   src="https://st2.depositphotos.com/2743147/9292/i/450/depositphotos_92920470-stock-photo-heart-isolated-on-white-and.jpg">
 <p>
-  Which will take place on <strong style="color: red">August 25</strong></p>
+  Which will take place on <strong style="color: red">{{inviteInfo.date}} in {{inviteInfo.time}}</strong></p>
       <p>
         by the address:
-      <span> ADressss </span>
+      <span> {{inviteInfo.address}} </span>
       </p>
-      <p>message</p>
+      <p>{{inviteInfo.message}}</p>
       <p>
         We will be happy to see you at our wedding
       </p>
@@ -67,7 +73,6 @@
       >
         May be i will come
       </v-btn>
-
     </v-flex>
   </v-layout>
 </v-container>
@@ -80,10 +85,36 @@
     data(){
       return {
         animate: false,
+        inviteInfo: {
+          bride: {
+            name: 'Kate',
+            surname: 'Ivanova',
+            fathername: ''
+          },
+          groom: {
+            name: 'Sergei',
+            surname: 'Vasin',
+            fathername: ''
+          },
+          guest: {
+            name: 'Djo',
+            surname: 'Snow',
+            fathername: ''
+          },
+          date: '22-04-2019',
+          time: '12:00',
+          message: 'We are waiting you',
+          address: 'Moskov, st Mira, 6,12',
+        },
         answer: {
           message: '',
           isCome: ''
         }
+      }
+    },
+    computed: {
+      id() {
+        return  this.$route.id
       }
     },
     layout: 'weddings',

@@ -28,7 +28,7 @@
             <v-divider></v-divider>
 
             <v-text-field
-              v-model="bride.name"
+              v-model="currentUserEventInfo.bride.name"
               @input="validate"
               :rules="[v => !!v || 'Item is required']"
               label="Name"
@@ -36,12 +36,12 @@
               required
             ></v-text-field>
             <v-text-field
-              v-model="bride.surname"
+              v-model="currentUserEventInfo.bride.surname"
               label="Surname"
               data-vv-name="surname"
             ></v-text-field>
             <v-text-field
-              v-model="bride.fathername"
+              v-model="currentUserEventInfo.bride.fathername"
               label="Surname"
               data-vv-name="surname"
             ></v-text-field>
@@ -59,7 +59,7 @@
             <v-divider></v-divider>
 
             <v-text-field
-              v-model="groom.name"
+              v-model="currentUserEventInfo.groom.name"
               @input="validate"
               :rules="[v => !!v || 'Item is required']"
               label="Name"
@@ -67,12 +67,12 @@
               required
             ></v-text-field>
             <v-text-field
-              v-model="groom.surname"
+              v-model="currentUserEventInfo.groom.surname"
               label="Surname"
               data-vv-name="surname"
             ></v-text-field>
             <v-text-field
-              v-model="groom.fathername"
+              v-model="currentUserEventInfo.groom.fathername"
               label="Fathername"
               data-vv-name="fathername"
             ></v-text-field>
@@ -86,7 +86,7 @@
             <v-dialog
               ref="dialog"
               v-model="modal"
-              :return-value.sync="date"
+              :return-value.sync="currentUserEventInfo.date"
               persistent
               lazy
               full-width
@@ -94,8 +94,8 @@
             >
               <template v-slot:activator="{ on }">
                 <v-text-field
-                  v-model="date"
-                  @input="validate"
+                  v-model="currentUserEventInfo.date"
+
                   :rules="[v => !!v || 'Item is required']"
                   label="Date of wedding"
                   prepend-icon="event"
@@ -108,12 +108,13 @@
                 :allowed-dates="allowedDates"
                 color="red lighten-1"
                 header-color="red"
-                v-model="date"
+                v-model="currentUserEventInfo.date"
                 scrollable
+                reactive
               >
                 <v-spacer></v-spacer>
                 <v-btn flat color="primary" @click="modal = false">Cancel</v-btn>
-                <v-btn flat color="primary" @click="$refs.dialog.save(date)">OK</v-btn>
+                <v-btn flat color="primary" @click="$refs.dialog.save(currentUserEventInfo.date)">OK</v-btn>
               </v-date-picker>
             </v-dialog>
           </v-flex>
@@ -126,7 +127,7 @@
             <v-dialog
               ref="dialog2"
               v-model="modal2"
-              :return-value.sync="time"
+              :return-value.sync="currentUserEventInfo.time"
               persistent
               lazy
               full-width
@@ -134,10 +135,9 @@
             >
               <template v-slot:activator="{ on }">
                 <v-text-field
-                  v-model="time"
+                  v-model="currentUserEventInfo.time"
                   label="Time of wedding"
                   prepend-icon="access_time"
-                  @input="validate"
                   :rules="[v => !!v || 'Item is required']"
                   required
                   readonly
@@ -146,13 +146,13 @@
               </template>
               <v-time-picker
                 v-if="modal2"
-                v-model="time"
+                v-model="currentUserEventInfo.time"
                 full-width
                 color="red lighten-1"
               >
                 <v-spacer></v-spacer>
                 <v-btn flat color="primary" @click="modal2 = false">Cancel</v-btn>
-                <v-btn flat color="primary" @click="$refs.dialog2.save(time)">OK</v-btn>
+                <v-btn flat color="primary" @click="$refs.dialog2.save(currentUserEventInfo.time)">OK</v-btn>
               </v-time-picker>
             </v-dialog>
           </v-flex>
@@ -170,7 +170,7 @@
               box
               label="Merrage address"
               auto-grow
-              v-model="address"
+              v-model="currentUserEventInfo.address"
             ></v-textarea>
           </v-flex>
           <v-flex
@@ -181,9 +181,8 @@
               box
               label="Short message to your guests, if you want"
               auto-grow
-              v-model="message"
+              v-model="currentUserEventInfo.message"
             ></v-textarea>
-
           </v-flex>
         </v-layout>
         <v-btn
@@ -197,28 +196,8 @@
 
 
   export default {
-    $_veeValidate: {
-      validator: 'new'
-    },
-
     data () {
       return {
-      bride: {
-        name: '',
-        surname: '',
-        fathername: ''
-      }
-    ,
-      groom: {
-        name: '',
-          surname: '',
-          fathername: ''
-      }
-    ,
-      date: null,
-        time: null,
-        address: '',
-        message: '',
         menu: false,
         modal: false,
         modal2: false,
@@ -228,6 +207,30 @@
         required: value => !!value || 'Required'
       }
     }
+    },
+    computed: {
+      currentUserEventInfo () {
+        const currentUserEventInfo = this.$store.getters.getCurrentUserEventInfo
+        console.log(currentUserEventInfo)
+        return {
+          bride: {
+            name: currentUserEventInfo.eventInfo.bride.name || '',
+            surname: currentUserEventInfo.eventInfo.bride.surname || '',
+            fathername:  currentUserEventInfo.eventInfo.bride.fathername || '',
+          }
+          ,
+          groom: {
+            name:  currentUserEventInfo.eventInfo.groom.name || '',
+            surname: currentUserEventInfo.eventInfo.groom.surname || '',
+            fathername:  currentUserEventInfo.eventInfo.groom.fathername || '',
+          }
+          ,
+          date: currentUserEventInfo.eventInfo.date || '',
+          time: currentUserEventInfo.eventInfo.time || '',
+          address: currentUserEventInfo.eventInfo.address || '',
+          message: currentUserEventInfo.eventInfo.message || '',
+        }
+      }
     },
     methods: {
       allowedDates: (date) => {
@@ -244,14 +247,14 @@
         this.validate();
       if(this.$refs.form.validate()){
         const data = {
-          bride: this.bride,
-          groom: this.groom,
-          date: this.date,
-          time: this.time,
-          message: this.message,
-          address: this.address,
+          bride: this.currentUserEventInfo.bride,
+          groom: this.currentUserEventInfo.groom,
+          date: this.currentUserEventInfo.date,
+          time: this.currentUserEventInfo.time,
+          message: this.currentUserEventInfo.message,
+          address: this.currentUserEventInfo.address,
         }
-        console.log(data)
+        this.$store.dispatch('setCurrentUserEventInfo', data)
       }
       }
     }

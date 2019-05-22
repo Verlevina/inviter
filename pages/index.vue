@@ -4,6 +4,7 @@
       <v-container class="pt-0 mt-0">
         <PageDescription></PageDescription>
         <AddNewEvents></AddNewEvents>
+
       </v-container>
     </v-content>
   </div>
@@ -13,6 +14,7 @@
 import UserPreview from '~/components/user/user-preview.vue'
 import AddNewEvents from '~/components/page-blocks/AddNewEvents.vue'
 import PageDescription from '~/components/page-blocks/PageDescription.vue'
+
 
 
 

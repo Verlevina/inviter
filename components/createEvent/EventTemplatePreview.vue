@@ -2,7 +2,7 @@
   <v-card
     class="card">
     <v-img
-      :src="eventTemplate.url"
+      :src="partyType.url"
       height="200px"
       contain
     >
@@ -10,14 +10,14 @@
 
     <v-card-title primary-title>
       <div>
-        <div class="headline">{{eventTemplate.title}}</div>
-        <span class="grey--text">  {{eventTemplate.shortDescription}}</span>
+        <div class="headline">{{partyType.title}}</div>
+        <span class="grey--text">  {{partyType.shortDescription}}</span>
       </div>
     </v-card-title>
 
     <v-card-actions>
       <v-btn flat @click="show = !show">More</v-btn>
-      <v-btn flat color="blue" :to="`/${eventTemplate.link}`">Select</v-btn>
+      <v-btn flat color="blue" :to="`/${partyType.link}`">Select</v-btn>
       <v-spacer></v-spacer>
       <v-btn icon @click="show = !show">
         <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
@@ -26,7 +26,7 @@
 
     <v-slide-y-transition>
       <v-card-text v-show="show">
-          {{eventTemplate.description}}
+          {{partyType.description}}
       </v-card-text>
     </v-slide-y-transition>
   </v-card>
@@ -41,7 +41,7 @@
       }
     },
     props: {
-      eventTemplate: {
+      partyType: {
         required: true,
         type: Object
       }

@@ -9,17 +9,17 @@
       </p>
     </v-container>
     <v-container class="pt-0 mt-0">
-            <WeddingTemplatesPreview
-              @selectTemplate="currentTab = 0"></WeddingTemplatesPreview>
-
-            <WedingInfoGetter></WedingInfoGetter>
-
+      <WeddingTemplatesPreview></WeddingTemplatesPreview>
+      <WedingInfoGetter></WedingInfoGetter>
+      <GuestListGetter></GuestListGetter>
     </v-container>
   </v-content>
 </template>
 <script>
   import WeddingTemplatesPreview from '~/components/wedding/WeddingTemplatesPreview.vue'
-  import WedingInfoGetter from '~/components/wedding/WedingInfoGetter.vue'
+  import WedingInfoGetter from '~/components/wedding/WeddingInfoGetter.vue'
+  import GuestListGetter from '~/components/common/GuestListGetter.vue'
+
   export default {
     data(){
       return {
@@ -28,7 +28,8 @@
     },
     components: {
       WeddingTemplatesPreview,
-      WedingInfoGetter
+      WedingInfoGetter,
+      GuestListGetter
     },
     methods: {
       selectTemplate(){

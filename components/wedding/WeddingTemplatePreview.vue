@@ -81,6 +81,7 @@
     },
     selectTemplate(eventId){
       console.log(`отправка ajax template id: ${eventId}`)
+      this.$store.dispatch('setCurrentUserEventInfo', {templateId: eventId})
       this.$emit('selectTemplate')
   }
   }
