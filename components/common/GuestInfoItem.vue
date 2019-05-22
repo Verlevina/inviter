@@ -1,11 +1,22 @@
 <template>
-  <div class="info-input--wrapper">
-    <v-container grid-list-md>
+  <div>
+    <v-container
+      class="info-input--wrapper"
+      grid-list-sm
+      ma0 pa0>
       <v-form
-        ref="form"
-      >
-        <v-layout row wrap>
-          <v-flex xs12>
+        ref="form">
+        <div class="info-input--counter">
+          {{index + 1}}
+        </div>
+        <v-layout
+          row
+          wrap>
+
+          <v-flex
+            sm3 xs6
+            order-xs1
+          >
             <v-text-field
               outline
               label="Name"
@@ -15,21 +26,30 @@
             >
             </v-text-field>
           </v-flex>
-          <v-flex xs12>
+          <v-flex
+            order-xs3
+            xs6
+            sm3>
             <v-text-field
               label="Surname"
               v-model="guestInfo.surname"
             >
             </v-text-field>
           </v-flex>
-          <v-flex xs12>
+          <v-flex
+            order-xs5
+            xs6
+            sm2>
             <v-text-field
               label="Fathername"
               v-model="guestInfo.fathername"
             >
             </v-text-field>
           </v-flex>
-          <v-flex xs12>
+          <v-flex
+            order-xs2
+            xs6
+            sm3>
             <v-text-field
               v-model="guestInfo.email"
               :rules="emailRules"
@@ -40,21 +60,27 @@
             >
             </v-text-field>
           </v-flex>
+          <v-flex
+            order-sm5
+            order-xs4
+            sm1>
+            <v-btn
+
+              @click="updateGuest"
+            >
+              update
+            </v-btn>
+          </v-flex>
         </v-layout>
       </v-form>
-      <v-btn
-        @click="updateGuest"
-      >
-        update
-      </v-btn>
+
     </v-container>
-    {{guestInfo.id}}
   </div>
 </template>
 
 <script>
   export default {
-    props: ['guestInfo'],
+    props: ['guestInfo', 'index'],
     data() {
       return {
         valid: false,
@@ -75,14 +101,13 @@
         if (this.$refs.form.validate()) {
           console.log(`valid`)
           const guestInfo = {
-            id:  this.guestInfo.id,
+            id: this.guestInfo.id,
             name: this.guestInfo.name,
             surname: this.guestInfo.surname,
             fathername: this.guestInfo.fathername,
             email: this.guestInfo.email
           }
           this.$store.dispatch('updateGuest', guestInfo)
-          this.$emit('complete')
         }
       }
     }
@@ -90,8 +115,18 @@
 </script>
 <style scoped>
   .info-input--wrapper {
-    border: 3px solid grey;
-    border-radius: 5px;
-    padding: 20px
+    position: relative;
+    padding:0;
+    margin:0;
+  }
+  .info-input--counter {
+    position: absolute;
+    border-radius: 50%;
+    top:3px;
+    left: -24px;
+    border-left: 2px solid grey;
+    width: 30px;
+    height: 30px;
+    text-align: center;
   }
 </style>

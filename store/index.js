@@ -149,9 +149,15 @@ const store = () => {
         Object.keys(payload).forEach(item => {
           state.user.currentEvent[item] = payload[item]
         })
+      },
+      setCurrentEventType(state, partyType) {
+        state.user.currentEvent.partyType = partyType
       }
     },
     actions: {
+      setCurrentEventType (vuexContext, eventInfo) {
+        vuexContext.commit("setCurrentEventType", eventInfo)
+      },
       setUserEvent (vuexContext, eventInfo) {
         vuexContext.commit("setUserEvent", eventInfo)
         console.log('ajax request')
@@ -189,6 +195,9 @@ const store = () => {
       },
       getGuestsInfo (state) {
         return state.user.currentEvent.guestList
+      },
+      getEventInfo (state) {
+        return state.user.currentEvent
       }
     }
   })

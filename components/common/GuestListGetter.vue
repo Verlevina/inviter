@@ -8,7 +8,7 @@
     </v-container>
 
     <v-container
-      grid-list-md
+
       class="pt-0 mt-0">
       <v-form
         lazy-validation
@@ -18,14 +18,27 @@
         <GuestInfoInput>
         </GuestInfoInput>
 
+        <v-layout
+        column
+        >
+          <v-flex
+            ma-0
+            :key="guestInfo.id"
+            v-for="(guestInfo, index) in guestsInfo"
+          >
             <GuestInfoItem
-              :guestsInfo="guestsInfo"
+              :guestInfo="guestInfo"
+              :index="index"
             ></GuestInfoItem>
+          </v-flex>
+        </v-layout>
 
       </v-form>
     </v-container>
 
-    <v-btn color="red">I am ready, let me check Info</v-btn>
+    <v-btn
+      @click="completeForm"
+      color="red">I am ready, let me check Info</v-btn>
   </v-content>
 </template>
 <script>
@@ -45,12 +58,18 @@
           surname: '',
           fathername: '',
           email: ''
-      },
+        },
       }
     },
     computed: {
-      guestsInfo () {
+      guestsInfo() {
         return this.$store.getters.getGuestsInfo
+      }
+    },
+    methods: {
+      completeForm () {
+        const eventInfo = this.$store.getters.getEventInfo
+        console.log(eventInfo)
       }
     }
   }

@@ -246,7 +246,7 @@
       submit() {
         this.validate();
       if(this.$refs.form.validate()){
-        const data = {
+        const eventInfo = {
           bride: this.currentUserEventInfo.bride,
           groom: this.currentUserEventInfo.groom,
           date: this.currentUserEventInfo.date,
@@ -254,7 +254,8 @@
           message: this.currentUserEventInfo.message,
           address: this.currentUserEventInfo.address,
         }
-        this.$store.dispatch('setCurrentUserEventInfo', data)
+        console.log(eventInfo)
+        this.$store.dispatch('setCurrentUserEventInfo', {eventInfo})
       }
       }
     }
