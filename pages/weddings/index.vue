@@ -109,22 +109,21 @@
                 </template>
                 <v-card>
                   <v-card-title>
-                    <span class="headline">Use Google's location service?</span>
+                    Congratulations! We are ready to invite your guests!
                   </v-card-title>
                   <v-card-text class="text-xs-center">
-                    <h2 class="display-3"> Congratulations! We are ready to invite your guests!</h2>
                     <p>Please, check all info before accept mail sending!</p>
 
                     <v-divider></v-divider>
                     Click to look your guests invite sheets in new tab:
                     <a :href='testInviteSheetUrl' target="_blank">Invite Link</a>
                     <h3 class="display-3">Guests list</h3>
-                    <p>Liiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiist</p>
+                    <GuestsInfoTable></GuestsInfoTable>
                     </v-card-text>
                   <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn color="green darken-1" flat="flat" @click="dialog = false">Stop! something wrong!</v-btn>
-                    <v-btn color="green darken-1" flat="flat" @click="dialog = false">All right! Send Messages!!!</v-btn>
+                    <v-btn color="red darken-1" flat="flat" @click="dialog = false">Stop! something wrong!</v-btn>
+                    <v-btn color="green darken-1"  @click="dialog = false">All right! Send Messages!!!</v-btn>
                   </v-card-actions>
                 </v-card>
               </v-dialog>
@@ -143,6 +142,7 @@
 </template>
 <script>
   import WeddingTemplatesPreview from '~/components/wedding/WeddingTemplatesPreview.vue'
+  import GuestsInfoTable from '~/components/common/GuestsInfoTabl.vue'
   import WedingInfoGetter from '~/components/wedding/WeddingInfoGetter.vue'
   import CheckDialog from '~/components/wedding/CheckDialog.vue'
   import  GuestListGetter from '~/components/common/GuestListGetter.vue'
@@ -159,7 +159,8 @@
       WeddingTemplatesPreview,
       WedingInfoGetter,
       GuestListGetter,
-      CheckDialog
+      CheckDialog,
+      GuestsInfoTable
     },
     methods: {
       selectTemplate() {
@@ -190,10 +191,6 @@
         return  '/weddings/templates/'+ this.selectedTemplateName +
       '?id=test'
       }
-    },
-    mounted: function() {
-      const q = this.$route.query
-      console.log(q)
-    },
+    }
   }
 </script>

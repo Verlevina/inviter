@@ -47,17 +47,6 @@
       GuestInfoInput,
       GuestInfoItem
     },
-    data() {
-      return {
-        template: {
-          id: null,
-          name: '',
-          surname: '',
-          fathername: '',
-          email: ''
-        },
-      }
-    },
     computed: {
       guestsInfo() {
         return this.$store.getters.getGuestsInfo
