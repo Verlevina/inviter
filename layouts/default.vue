@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Alert></Alert>
     <v-navigation-drawer
       v-model="drawer"
       absolute

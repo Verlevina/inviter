@@ -13,7 +13,6 @@
       <v-form
         lazy-validation
         ref="form"
-        v-model="valid"
       >
         <GuestInfoInput>
         </GuestInfoInput>
@@ -36,9 +35,7 @@
       </v-form>
     </v-container>
 
-    <v-btn
-      @click="completeForm"
-      color="red">I am ready, let me check Info</v-btn>
+
   </v-content>
 </template>
 <script>
@@ -67,10 +64,7 @@
       }
     },
     methods: {
-      completeForm () {
-        const eventInfo = this.$store.getters.getEventInfo
-        console.log(eventInfo)
-      }
+
     }
   }
 </script>

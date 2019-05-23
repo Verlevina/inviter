@@ -41,21 +41,21 @@ const store = () => {
           templateId: '',
           eventInfo: {
             bride: {
-              name: 'Veronika',
+              name: '',
               surname: '',
               fathername: ''
             }
             ,
             groom: {
-              name: 'Denis',
+              name: '',
               surname: '',
               fathername: ''
             }
             ,
             date: '',
             time: '',
-            address: 'Pionerskaya, 10, 30',
-            message: 'hello, we are waiting you',
+            address: '',
+            message: '',
         },
           guestList: []
       }
@@ -132,6 +132,13 @@ const store = () => {
       }
     },
     mutations: {
+      deleteGuest(state, guestId){
+        console.log(guestId)
+        const guestIndex = state.user.currentEvent.guestList.findIndex(guest => {
+          return guest.id = guestId
+        })
+        state.user.currentEvent.guestList.splice(guestIndex, 1)
+      },
       setUserEvent(state) {
         state.user.userEvents.push(state.user.currentEvent)
       },
@@ -155,6 +162,9 @@ const store = () => {
       }
     },
     actions: {
+      deleteGuest (vuexContext, guestId) {
+        vuexContext.commit("deleteGuest", guestId)
+      },
       setCurrentEventType (vuexContext, eventInfo) {
         vuexContext.commit("setCurrentEventType", eventInfo)
       },
@@ -198,6 +208,10 @@ const store = () => {
       },
       getEventInfo (state) {
         return state.user.currentEvent
+      },
+      getAlert (state) {
+        console.log(state.alert)
+        return state.alert
       }
     }
   })

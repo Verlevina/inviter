@@ -29,7 +29,7 @@
           <v-flex
             order-xs3
             xs6
-            sm3>
+            sm2>
             <v-text-field
               label="Surname"
               v-model="guestInfo.surname"
@@ -63,12 +63,21 @@
           <v-flex
             order-sm5
             order-xs4
-            sm1>
-            <v-btn
+            sm2>
 
-              @click="updateGuest"
+            <v-btn outline fab color="green"
+                   small
+                   title="update"
+                   @click="updateGuest"
             >
-              update
+              <v-icon>edit</v-icon>
+            </v-btn>
+            <v-btn outline fab color="red"
+                   title="delete"
+                   @click="deleteGuest"
+                   small
+            >
+              <v-icon>close</v-icon>
             </v-btn>
           </v-flex>
         </v-layout>
@@ -109,6 +118,9 @@
           }
           this.$store.dispatch('updateGuest', guestInfo)
         }
+      },
+      deleteGuest() {
+        this.$store.dispatch('deleteGuest', this.guestInfo.id)
       }
     }
   }
@@ -116,13 +128,14 @@
 <style scoped>
   .info-input--wrapper {
     position: relative;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
   }
+
   .info-input--counter {
     position: absolute;
     border-radius: 50%;
-    top:3px;
+    top: 3px;
     left: -24px;
     border-left: 2px solid grey;
     width: 30px;

@@ -31,19 +31,19 @@
               v-model="currentUserEventInfo.bride.name"
               @input="validate"
               :rules="[v => !!v || 'Item is required']"
-              label="Name"
+              label="Bride name"
               data-vv-name="brideName"
               required
             ></v-text-field>
             <v-text-field
               v-model="currentUserEventInfo.bride.surname"
-              label="Surname"
+              label="Bride  surname"
               data-vv-name="surname"
             ></v-text-field>
             <v-text-field
               v-model="currentUserEventInfo.bride.fathername"
-              label="Surname"
-              data-vv-name="surname"
+              label="Bride fathername"
+              data-vv-name="fathername"
             ></v-text-field>
           </v-flex>
 
@@ -62,18 +62,18 @@
               v-model="currentUserEventInfo.groom.name"
               @input="validate"
               :rules="[v => !!v || 'Item is required']"
-              label="Name"
+              label="Groom name"
               data-vv-name="groomName"
               required
             ></v-text-field>
             <v-text-field
               v-model="currentUserEventInfo.groom.surname"
-              label="Surname"
+              label="Groom surname"
               data-vv-name="surname"
             ></v-text-field>
             <v-text-field
               v-model="currentUserEventInfo.groom.fathername"
-              label="Fathername"
+              label="Groom fathername"
               data-vv-name="fathername"
             ></v-text-field>
 
@@ -186,6 +186,8 @@
           </v-flex>
         </v-layout>
         <v-btn
+          color="red"
+          dark
           @click="submit">submit</v-btn>
       </v-form>
     </v-container>
@@ -256,6 +258,7 @@
         }
         console.log(eventInfo)
         this.$store.dispatch('setCurrentUserEventInfo', {eventInfo})
+        this.$emit('weddingInfoGetterComplete')
       }
       }
     }

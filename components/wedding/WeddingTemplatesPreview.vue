@@ -20,6 +20,7 @@
     >
       <WeddingTemplatePreview
       :card="weddingTemplate"
+      @selectTemplate="selectTemplate"
       ></WeddingTemplatePreview>
     </v-flex>
   </v-layout>
@@ -37,6 +38,11 @@
     computed: {
       weddingTemplates () {
         return this.$store.getters.getWeddingTemplates
+      }
+    },
+    methods: {
+      selectTemplate () {
+        this.$emit('selectTemplate')
       }
     },
     components: {

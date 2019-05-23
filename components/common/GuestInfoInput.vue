@@ -45,11 +45,11 @@
       <v-btn
         @click="updateGuest"
         color="red"
+        dark
       >
         Add guest
       </v-btn>
     </v-container>
-    {{guestInfo.id}}
   </div>
 </template>
 
