@@ -1,6 +1,13 @@
 <template>
   <div>
-    <Alert></Alert>
+    <v-alert
+      style="position: fixed; z-index:999; top:0; left:0; right:0;background: #fff; "
+      :value="!!alert.message"
+      :color="alert.color"
+      icon="check_circle"
+      outline
+    >{{alert.message}}
+    </v-alert>
     <v-navigation-drawer
       v-model="drawer"
       absolute
@@ -11,23 +18,6 @@
 
       <v-divider></v-divider>
       <v-list>
-
-        <v-list-tile
-          class="navigation--item"
-        >
-          <v-list-tile-avatar>
-            <i class="material-icons">
-              event
-            </i>
-          </v-list-tile-avatar>
-
-          <v-list-tile-content>
-
-            <v-list-tile-title>Your events</v-list-tile-title>
-            <v-list-tile-sub-title >List of nearest events</v-list-tile-sub-title>
-
-          </v-list-tile-content>
-        </v-list-tile>
 
         <v-list-tile
           class="navigation--item"
@@ -54,7 +44,7 @@
           </v-list-tile-avatar>
 
           <v-list-tile-content>
-            <v-list-tile-title @click="$router.push('/templates')">Templates</v-list-tile-title>
+            <v-list-tile-title @click="$router.push('/user-events')">Your Events</v-list-tile-title>
             <v-list-tile-sub-title>List of the best events templates</v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
@@ -73,7 +63,6 @@
             <v-list-tile-sub-title ></v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
-
       </v-list>
     </v-navigation-drawer>
     <ToolBar
@@ -92,6 +81,11 @@
     data() {
       return {
         drawer: false
+      }
+    },
+    computed: {
+      alert() {
+        return this.$store.getters.getAlert
       }
     },
     components: {

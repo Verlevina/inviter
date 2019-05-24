@@ -113,9 +113,11 @@
       }
     },
     computed: {
-      id() {
-        return  this.$route.id
-      }
+      // inviteInfo() {
+      //   if(this.$route.id === 'test') {
+      //     this.$store.dispatch('')
+      //   }
+      // }
     },
     layout: 'weddings',
     methods: {

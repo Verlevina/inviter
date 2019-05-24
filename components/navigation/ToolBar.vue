@@ -5,7 +5,7 @@
   >
     <v-toolbar-side-icon
       class="hidden-md-and-up"
-      @click="$emit('toggleMenu')"
+      @click.stop="$emit('toggleMenu')"
     ></v-toolbar-side-icon>
     <v-toolbar-title>
       <h2 class="toolbar--title">
@@ -14,13 +14,12 @@
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>Your events</v-btn>
       <v-btn
         to="`/new-event`"
         flat>Create event</v-btn>
       <v-btn
-
-        flat>Templates</v-btn>
+        to="`/user-event`"
+        flat>Your events</v-btn>
       <v-btn flat>About Project</v-btn>
 
       <UserPreview></UserPreview>

@@ -8,18 +8,11 @@
     </v-container>
 
     <v-container
-
       class="pt-0 mt-0">
-      <v-form
-        lazy-validation
-        ref="form"
-      >
         <GuestInfoInput>
         </GuestInfoInput>
 
-        <v-layout
-        column
-        >
+        <v-layout column>
           <v-flex
             ma-0
             :key="guestInfo.id"
@@ -31,8 +24,6 @@
             ></GuestInfoItem>
           </v-flex>
         </v-layout>
-
-      </v-form>
     </v-container>
 
 

@@ -30,11 +30,6 @@
 <script>
   import WeddingTemplatePreview from '~/components/wedding/WeddingTemplatePreview'
   export  default {
-    data() {
-      return {
-
-      }
-    },
     computed: {
       weddingTemplates () {
         return this.$store.getters.getWeddingTemplates

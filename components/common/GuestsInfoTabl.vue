@@ -6,7 +6,6 @@
       class="elevation-1"
     >
       <template v-slot:items="props">
-        <td  class="text-xs-right">{{ props.item.id }}</td>
         <td  class="text-xs-right">{{ props.item.name }}</td>
         <td class="text-xs-right">{{  props.item.surname }}</td>
         <td class="text-xs-right">{{  props.item.fathername }}</td>
@@ -27,12 +26,6 @@
     data () {
       return {
         headers: [
-          {
-            text: 'Id',
-            align: 'left',
-            sortable: false,
-            value: 'id'
-          },
           {
             text: 'Name',
             align: 'left',
