@@ -83,6 +83,7 @@
       console.log(`отправка ajax template id: ${eventId}`)
       this.$store.dispatch('setCurrentUserEventInfo', {templateId: eventId})
       this.$store.dispatch('setCurrentEventType', 'wedding')
+      this.$store.dispatch('setAlert', {message: 'Template selected', color: 'green'} )
       this.$emit('selectTemplate')
   }
   }

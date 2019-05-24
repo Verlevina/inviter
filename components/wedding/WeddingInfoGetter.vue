@@ -256,7 +256,7 @@
           message: this.currentUserEventInfo.message,
           address: this.currentUserEventInfo.address,
         }
-        console.log(eventInfo)
+        this.$store.dispatch('setAlert', {message: 'We got your wedding info', color: 'green'} )
         this.$store.dispatch('setCurrentUserEventInfo', {eventInfo})
         this.$emit('weddingInfoGetterComplete')
       }

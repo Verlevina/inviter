@@ -200,7 +200,9 @@
         }
         this.dialog = true
         const eventInfo = this.$store.getters.getEventInfo
-        console.log(eventInfo)
+        this.$store.dispatch('setAlert', {message:
+            'Guests list complete! We are ready to start invite your guests, please, check all info',
+          color: 'green'} )
       },
       completeEventCreate() {
         this.dialog = false

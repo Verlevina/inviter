@@ -10,8 +10,8 @@
       <div>
         <h3 class="headline mb-0">{{userEvent.eventInfo.bride.name}} & {{userEvent.eventInfo.groom.name}}</h3>
         <p>{{userEvent.partyType}}</p>
-        <date> {{ userEvent.eventInfo.date }}</date>
-        <time> {{ userEvent.eventInfo.time }}</time>
+        <span> {{ userEvent.eventInfo.date }}</span>
+        <span> {{ userEvent.eventInfo.time }}</span>
         <address> {{ userEvent.eventInfo.address }}</address>
         <p> Guests count: {{userEvent.guestsList.length}}</p>
       </div>

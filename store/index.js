@@ -105,7 +105,7 @@ const store = () => {
             address: '',
             message: '',
         },
-          guestList: []
+          guestsList: []
       }
       },
       alert: {
@@ -143,26 +143,26 @@ const store = () => {
             address: '',
             message: '',
           },
-          guestList: []
+          guestsList: []
         }
       },
       deleteGuest(state, guestId){
-        const guestIndex = state.user.currentEvent.guestList.findIndex(guest => {
+        const guestIndex = state.user.currentEvent.guestsList.findIndex(guest => {
           return guest.id = guestId
         })
-        state.user.currentEvent.guestList.splice(guestIndex, 1)
+        state.user.currentEvent.guestsList.splice(guestIndex, 1)
       },
       setUserEvent(state) {
         state.user.userEvents.push(state.user.currentEvent)
       },
       setNewGuest(state, guest) {
-          state.user.currentEvent.guestList.push(guest)
+          state.user.currentEvent.guestsList.push(guest)
       },
       updateGuest(state, guest) {
-        const currentGuestIndex = state.user.currentEvent.guestList.findIndex(guestItem => {
+        const currentGuestIndex = state.user.currentEvent.guestsList.findIndex(guestItem => {
           return guestItem.id === guest.id
         })
-          state.user.currentEvent.guestList[currentGuestIndex] = guest
+          state.user.currentEvent.guestsList[currentGuestIndex] = guest
       },
       setCurrentUserEventInfo(state, payload) {
         console.log(payload)
@@ -173,9 +173,26 @@ const store = () => {
       setCurrentEventType(state, partyType) {
         state.user.currentEvent.partyType = partyType
       },
-
+      setAlert (state, alert) {
+        state.alert = alert
+      },
+      clearAlert (state) {
+        state.alert = {
+          color: 'red',
+            message: '',
+        }
+      },
+      addUserEvent(state, userEvent) {
+        state.user.userEvents.push(userEvent)
+      }
     },
     actions: {
+      setAlert(vuexContext, alert){
+        vuexContext.commit('setAlert', alert)
+        setTimeout(()=>{
+          vuexContext.commit('clearAlert')
+        }, 3000)
+      },
       setPartyTypes (vuexContext, partyTypes) {
         vuexContext.commit('setPartyTypes', partyTypes)
       },
@@ -195,7 +212,7 @@ const store = () => {
         vuexContext.commit("setCurrentUserEventInfo", eventInfo)
       },
       setNewGuest(vuexContext, guest) {
-        guest.id = vuexContext.state.user.currentEvent.guestList.length + 1
+        guest.id = vuexContext.state.user.currentEvent.guestsList.length + 1
         vuexContext.commit("setNewGuest", guest)
       },
       updateGuest(vuexContext, guest) {
@@ -203,7 +220,9 @@ const store = () => {
       },
       sendEventInfo(vuexContext) {
         console.log('send HTTP')
+        vuexContext.commit("addUserEvent", vuexContext.state.user.currentEvent)
         console.log(vuexContext.state.user.currentEvent)
+        console.log(vuexContext.state.user.userEvents)
         vuexContext.commit("clearCurrentUserEventInfo")
       }
     },
@@ -241,7 +260,7 @@ const store = () => {
         return state.templates.wedding
       },
       getGuestsInfo (state) {
-        return state.user.currentEvent.guestList
+        return state.user.currentEvent.guestsList
       },
       getEventInfo (state) {
         return state.user.currentEvent

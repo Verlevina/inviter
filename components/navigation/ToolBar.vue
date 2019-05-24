@@ -1,13 +1,15 @@
 <template>
   <v-toolbar
     class="toolbar"
-    @click="$router.push('/')"
+
   >
     <v-toolbar-side-icon
       class="hidden-md-and-up"
       @click.stop="$emit('toggleMenu')"
     ></v-toolbar-side-icon>
-    <v-toolbar-title>
+    <v-toolbar-title
+      @click="$router.push('/')"
+    >
       <h2 class="toolbar--title">
         Inviter
       </h2>
@@ -15,12 +17,15 @@
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn
-        to="`/new-event`"
+        @click="$router.push(`/new-event`)"
         flat>Create event</v-btn>
       <v-btn
-        to="`/user-event`"
+        @click="$router.push(`/user-events`)"
         flat>Your events</v-btn>
-      <v-btn flat>About Project</v-btn>
+
+      <v-btn
+        @click="$router.push(`/about`)"
+        flat>About Project</v-btn>
 
       <UserPreview></UserPreview>
     </v-toolbar-items>
