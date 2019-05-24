@@ -1,6 +1,11 @@
 <template>
-  <v-card
-  class="card">
+
+    <v-card
+
+  class= "card"
+  @click="$router.push(`/user-events/${userEvent.id}`)"
+
+  >
     <v-img
       src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
       aspect-ratio="2.75"
