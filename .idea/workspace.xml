@@ -20,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.17966574">
+    <splitter split-orientation="horizontal" split-proportion="0.36975524">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="GuestInfoItem.vue" pinned="false" current-in-tab="false">
@@ -101,7 +101,7 @@
           <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pages/index.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="88">
+                <state relative-caret-position="714">
                   <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
                 </state>
               </provider>
@@ -123,7 +123,7 @@
           <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/store/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="836">
+                <state relative-caret-position="3553">
                   <caret line="226" column="7" selection-start-line="226" selection-start-column="7" selection-end-line="226" selection-end-column="7" />
                   <folding>
                     <element signature="e#0#21#0" expanded="true" />
@@ -137,7 +137,7 @@
           <file leaf-file-name="loading.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/components/loading.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
+                <state relative-caret-position="561">
                   <caret line="33" column="11" lean-forward="true" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
                 </state>
               </provider>
@@ -283,8 +283,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="571" />
-    <option name="y" value="5" />
+    <option name="x" value="-61" />
+    <option name="y" value="25" />
     <option name="width" value="1302" />
     <option name="height" value="989" />
   </component>
@@ -483,25 +483,25 @@
       <workItem from="1558347315426" duration="109798000" />
       <workItem from="1558946747349" duration="4063000" />
       <workItem from="1559033861713" duration="2874000" />
+      <workItem from="1559285713963" duration="623000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134571000" />
+    <option name="totallyTimeSpent" value="135194000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="571" y="5" width="1302" height="989" extended-state="0" />
-    <editor active="true" />
+    <frame x="-61" y="25" width="1302" height="989" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.82726204" visible="true" weight="0.094936706" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8256735" visible="true" weight="0.094936706" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
-      <window_info id="npm" order="2" sideWeight="0.17273796" side_tool="true" visible="true" weight="0.094936706" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.0" />
+      <window_info id="npm" order="2" sideWeight="0.17432646" side_tool="true" visible="true" weight="0.094936706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.25925925" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.25851938" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -674,9 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -698,10 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#v-alert#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#2239#2299#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -809,7 +802,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/store/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
+        <state relative-caret-position="3553">
           <caret line="226" column="7" selection-start-line="226" selection-start-column="7" selection-end-line="226" selection-end-column="7" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
@@ -821,7 +814,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
+        <state relative-caret-position="714">
           <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
         </state>
       </provider>
@@ -835,7 +828,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/loading.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="561">
           <caret line="33" column="11" lean-forward="true" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
         </state>
       </provider>
