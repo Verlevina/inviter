@@ -16,14 +16,17 @@
         <v-btn
           dark
           @click.stop="sendTrialMail(card.id)"
-        >Trial Mail</v-btn>
+        >Trial Mail
+        </v-btn>
         <v-btn
           @click.stop="$router.push(`/weddings/templates/${card.name}`)"
           dark
-        >Trial invite sheet</v-btn>
+        >Trial invite sheet
+        </v-btn>
         <v-btn
           @click="selectTemplate(card.id)"
-        >Select template</v-btn>
+        >Select template
+        </v-btn>
       </div>
     </div>
   </div>
@@ -31,62 +34,62 @@
 
 <script>
   export default {
-  mounted() {
-    this.width = this.$refs.card.offsetWidth;
-    this.height = this.$refs.card.offsetHeight;
-  },
-  props: ['card'],
+    mounted() {
+      this.width = this.$refs.card.offsetWidth;
+      this.height = this.$refs.card.offsetHeight;
+    },
+    props: ['card'],
     data: () => ({
-    width: 0,
-    height: 0,
-    mouseX: 0,
-    mouseY: 0,
-    mouseLeaveDelay: null
-  }),
+      width: 0,
+      height: 0,
+      mouseX: 0,
+      mouseY: 0,
+      mouseLeaveDelay: null
+    }),
     computed: {
-    mousePX() {
-      return this.mouseX / this.width;
-    },
-    mousePY() {
-      return this.mouseY / this.height;
-    },
-    cardStyle() {
-      const rX = this.mousePX * 10;
-      const rY = this.mousePY * 10;
-      return {
-        transform: `rotateY(${rX}deg) rotateX(${rY}deg)`
-      };
-    }
-  },
-  methods: {
-    //методы оформления
-    handleMouseMove(e) {
-      if(this.$refs.card) {
-        this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width / 2;
-        this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height / 2;
-      }
+      mousePX() {
+        return this.mouseX / this.width;
       },
-    handleMouseEnter() {
-      clearTimeout(this.mouseLeaveDelay);
+      mousePY() {
+        return this.mouseY / this.height;
+      },
+      cardStyle() {
+        const rX = this.mousePX * 10;
+        const rY = this.mousePY * 10;
+        return {
+          transform: `rotateY(${rX}deg) rotateX(${rY}deg)`
+        };
+      }
     },
-    handleMouseLeave() {
-      this.mouseLeaveDelay = setTimeout(()=>{
-        this.mouseX = 0;
-        this.mouseY = 0;
-      }, 1000);
-    },
-    // Методы логики
-    sendTrialMail(eventId) {
-      console.log(`send trial mail to user: user, id template: ${eventId}`)
-    },
-    selectTemplate(eventId){
-      console.log(`отправка ajax template id: ${eventId}`)
-      this.$store.dispatch('setCurrentUserEventInfo', {templateId: eventId})
-      this.$store.dispatch('setCurrentEventType', 'wedding')
-      this.$store.dispatch('setAlert', {message: 'Template selected', color: 'green'} )
-      this.$emit('selectTemplate')
-  }
-  }
+    methods: {
+      //методы оформления
+      handleMouseMove(e) {
+        if (this.$refs.card) {
+          this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width / 2;
+          this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height / 2;
+        }
+      },
+      handleMouseEnter() {
+        clearTimeout(this.mouseLeaveDelay);
+      },
+      handleMouseLeave() {
+        this.mouseLeaveDelay = setTimeout(() => {
+          this.mouseX = 0;
+          this.mouseY = 0;
+        }, 1000);
+      },
+      // Методы логики
+      sendTrialMail(eventId) {
+        console.log(`send trial mail to user: user, id template: ${eventId}`)
+      },
+      selectTemplate(eventId) {
+        console.log(`отправка ajax template id: ${eventId}`)
+        this.$store.dispatch('setCurrentUserEventInfo', {templateId: eventId})
+        this.$store.dispatch('setCurrentEventType', 'wedding')
+        this.$store.dispatch('setAlert', {message: 'Template selected', color: 'green'})
+        this.$emit('selectTemplate')
+      }
+    }
   }
 </script>
 
@@ -98,7 +101,7 @@
     line-height: 1.5em;
   }
 
-  h1+p, p+p {
+  h1 + p, p + p {
     margin-top: 10px;
   }
 
@@ -132,21 +135,18 @@
         transform: translateY(0);
       }
       .card-bg {
-        transition:
-          0.6s $hoverEasing,
-          opacity 2s $hoverEasing;
+        transition: 0.6s $hoverEasing,
+        opacity 2s $hoverEasing;
         opacity: 0.9;
       }
       .card {
-        transition:
-          0.6s $hoverEasing,
-          box-shadow 2s $hoverEasing;
-        box-shadow:
-          rgba(white, 0.2) 0 0 40px 5px,
-          rgba(white, 1) 0 0 0 1px,
-          rgba(black, 1) 0 80px 100px 0,
-          inset #333 0 0 0 5px,
-          inset white 0 0 0 6px;
+        transition: 0.6s $hoverEasing,
+        box-shadow 2s $hoverEasing;
+        box-shadow: rgba(white, 0.2) 0 0 40px 5px,
+        rgba(white, 1) 0 0 0 1px,
+        rgba(black, 1) 0 80px 100px 0,
+        inset #333 0 0 0 5px,
+        inset white 0 0 0 6px;
       }
     }
   }
@@ -160,10 +160,9 @@
     background-color: #333;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow:
-      rgba(black, 0.66) 0 30px 60px 0,
-      inset #333 0 0 0 5px,
-      inset rgba(white, 0.5) 0 0 0 6px;
+    box-shadow: rgba(black, 0.66) 0 30px 60px 0,
+    inset #333 0 0 0 5px,
+    inset rgba(white, 0.5) 0 0 0 6px;
     transition: 1s $returnEasing;
   }
 
@@ -176,9 +175,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    transition:
-      1s $returnEasing,
-      opacity 5s 1s $returnEasing;
+    transition: 1s $returnEasing,
+    opacity 5s 1s $returnEasing;
     pointer-events: none;
   }
 
@@ -189,8 +187,8 @@
     flex-direction: column;
     align-items: center;
     bottom: 0;
-    left:0;
-    right:0;
+    left: 0;
+    right: 0;
     color: #fff;
     transform: translateY(40%);
     transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -209,7 +207,8 @@
     &:after {
       content: '';
       position: absolute;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       z-index: 0;
       width: 100%;
       height: 100%;
@@ -226,14 +225,11 @@
     font-weight: 700;
     text-shadow: rgba(black, 0.5) 0 10px 10px;
   }
-  @media handheld and (min-width: 600px) {
+
+  @media (max-width: 600px) {
 
     .card-wrap {
-      margin: 10px;
-      transform: perspective(800px);
-      transform-style: preserve-3d;
-      cursor: pointer;
-
+      transform: none;
       &:hover {
         .card-info {
           transform: translateY(0);
@@ -250,66 +246,29 @@
           transform: translateY(0);
         }
         .card-bg {
-          transition:
-            0.6s $hoverEasing,
-            opacity 2s $hoverEasing;
+          transition: 0.6s $hoverEasing,
+          opacity 2s $hoverEasing;
           opacity: 0.9;
-        }
-        .card {
-          transition:
-            0.6s $hoverEasing,
-            box-shadow 2s $hoverEasing;
-          box-shadow:
-            rgba(white, 0.2) 0 0 40px 5px,
-            rgba(white, 1) 0 0 0 1px,
-            rgba(black, 1) 0 80px 100px 0,
-            inset #333 0 0 0 5px,
-            inset white 0 0 0 6px;
         }
       }
     }
 
     .card {
-      position: relative;
-      flex: 0 0 240px;
-      width: 240px;
-      height: 320px;
-      background-color: #333;
+      position: static;
+      height: auto;
       overflow: hidden;
-      border-radius: 10px;
-      box-shadow:
-        rgba(black, 0.66) 0 30px 60px 0,
-        inset #333 0 0 0 5px,
-        inset rgba(white, 0.5) 0 0 0 6px;
-      transition: 1s $returnEasing;
     }
 
     .card-bg {
-      opacity: 1;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      padding: 20px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      transition:
-        1s $returnEasing,
-        opacity 5s 1s $returnEasing;
-      pointer-events: none;
+      position: static;
+      height: 320px;
     }
+
     .card-info {
       padding: 20px;
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      color: #fff;
-      transform: translateY(0);
-      transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+      position: static;
+      transform: translateY(0)
     }
-    }
+  }
+
 </style>

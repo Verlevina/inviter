@@ -53,7 +53,7 @@ fetch ({ store, params }) {
     }).then(res => {
       console.log(res)
       store.dispatch('setPartyTypes', res)
-    }).catch(e => context.error(e))
+    }).catch(e => console.error(e))
   }
 },
   components: {

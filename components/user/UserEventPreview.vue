@@ -11,15 +11,15 @@
       aspect-ratio="2.75"
     ></v-img>
 
-    <v-card-title primary-title>
-      <div>
+    <v-card-title
+      primary-title
+      class="event-info--wrapper">
         <h3 class="headline mb-0">{{userEvent.eventInfo.bride.name}} & {{userEvent.eventInfo.groom.name}}</h3>
         <p>{{userEvent.partyType}}</p>
         <span> {{ userEvent.eventInfo.date }}</span>
         <span> {{ userEvent.eventInfo.time }}</span>
         <address> {{ userEvent.eventInfo.address }}</address>
         <p> Guests count: {{userEvent.guestsList.length}}</p>
-      </div>
     </v-card-title>
   </v-card>
 </template>
@@ -45,5 +45,11 @@
       rgba(white, 1) 0 0 0 1px,
       rgba(black, 1) 0 80px 100px 0,
       inset white 0 0 0 6px;
+  }
+  .event-info--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 </style>
