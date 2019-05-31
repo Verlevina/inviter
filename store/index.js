@@ -174,7 +174,7 @@ const store = () => {
         state.user.currentEvent.partyType = partyType
       },
       setAlert (state, alert) {
-        state.alert = alert
+        state.alert = {...alert}
       },
       clearAlert (state) {
         state.alert = {
@@ -220,6 +220,8 @@ const store = () => {
       },
       sendEventInfo(vuexContext) {
         console.log('send HTTP')
+        axios.post('http://127.0.0.1:8080/API/currentEvent',vuexContext.state.user.currentEvent)
+
         vuexContext.commit("addUserEvent", vuexContext.state.user.currentEvent)
         console.log(vuexContext.state.user.currentEvent)
         console.log(vuexContext.state.user.userEvents)
@@ -257,7 +259,7 @@ const store = () => {
         return state.partyTypes
       },
       getWeddingTemplates (state) {
-        return state.templates.wedding
+        return state.templates
       },
       getGuestsInfo (state) {
         return state.user.currentEvent.guestsList

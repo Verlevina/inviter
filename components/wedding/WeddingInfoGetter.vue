@@ -213,7 +213,6 @@
     computed: {
       currentUserEventInfo () {
         const currentUserEventInfo = this.$store.getters.getCurrentUserEventInfo
-        console.log(currentUserEventInfo)
         return {
           bride: {
             name: currentUserEventInfo.eventInfo.bride.name || '',
@@ -235,11 +234,7 @@
       }
     },
     methods: {
-      allowedDates: (date) => {
-        const dateArr = date.split('-')
-        const moment = new Date()
-        return +dateArr[0] >= +moment.getFullYear() && +dateArr[1] >= +moment.getMonth()  && +dateArr[2] >= +moment.getDate()
-      },
+      allowedDates: (date) =>  new Date(date) >= new Date(),
       validate () {
         if (this.$refs.form.validate()) {
           this.valid = true

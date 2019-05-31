@@ -115,6 +115,7 @@
   import WedingInfoGetter from '~/components/wedding/WeddingInfoGetter.vue'
   import CheckDialog from '~/components/wedding/CheckDialog.vue'
   import GuestListGetter from '~/components/common/GuestListGetter.vue'
+  import axios from 'axios'
 
   export default {
     data() {
@@ -131,56 +132,10 @@
       CheckDialog,
       GuestsInfoTable
     },
-    fetch ({ store, params }) {
-      return new Promise((resolve, reject) => {
-        setTimeout( () => {
-          console.log('timeout')
-          resolve({
-            wedding: [
-              {
-                id: '1',
-                name: 'LoveIs',
-                title: 'template 1',
-                src:
-                  'https://static.wixstatic.com/media/fd83149d8529703ef54f6ae9c7aab39d4e281be276e618788fca14bffa0c72d2.jpg',
-                description: ''
-              },
-              {
-                id: '2',
-                name: 'LoveIs',
-                title: 'template 2',
-                src:
-                  'https://cs2.livemaster.ru/storage/4d/ac/f074ba53451200cb97c13dba9cry--svadebnyj-salon-priglashenie-na-svadbu.jpg',
-                description: ''
-              },
-              {
-                id: '3',
-                name: 'LoveIs',
-                title: 'template 1',
-                src: 'https://www.crazy-nevesta.ru/upload/resize_cache/iblock/ab7/500_500_2/ab73af12f53991afd875681b40972f77.jpg'
-
-              },
-              {
-                id: '4',
-                name: 'LoveIs',
-                title: 'template 1',
-                src: 'http://svadba-sovet.ru/wp-content/uploads/2017/06/Priglashenie-na-svadbu-44.jpg'
-
-              },
-              {
-                id: '5',
-                name: 'LoveIs',
-                title: 'template 1',
-                src: 'https://static.wixstatic.com/media/fd83149d8529703ef54f6ae9c7aab39d4e281be276e618788fca14bffa0c72d2.jpg'
-
-              }
-            ],
-          })
-          } ,1000)
-      }).then(res => {
-          console.log(res)
-          store.dispatch('setTemplates', res)
-        }).catch(e => context.error(e))
+    fetch({store, params}) {
+      return axios.get(`http://127.0.0.1:8080/API/getWeddingTemplate`).then(res => {
+        store.dispatch('setTemplates', res.data)
+      }).catch(e => console.error(e))
     },
     methods: {
       selectTemplate() {
@@ -191,26 +146,37 @@
         this.step = 3
         this.completeSteps.add(2)
       },
-      completeInput() {
-        for (let i = 1; i <= 3; i++) {
+      async completeInput() {
+        for (let i = 1; i <= 2; i++) {
           if (!this.completeSteps.has(i)) {
+            this.$store.dispatch('setAlert', {
+              message: 'Input all required fields, please',
+              color: 'red'
+            })
             this.step = i
             return
           }
         }
         this.dialog = true
-        const eventInfo = this.$store.getters.getEventInfo
-        this.$store.dispatch('setAlert', {message:
-            'Guests list complete! We are ready to start invite your guests, please, check all info',
-          color: 'green'} )
+       // const eventInfo = this.$store.getters.getEventInfo
+
+        this.$store.dispatch('setAlert', {
+          message: 'Guests list complete! We are ready to start invite your guests, please, check all info',
+          color: 'green'
+        })
+
       },
-      completeEventCreate() {
-        this.dialog = false
+      async completeEventCreate() {
+
         this.$store.dispatch('sendEventInfo')
+        await this.$store.dispatch('setAlert', {
+          message: 'Thank you for your proud! we are sending letters to your guests! Happy Wedding',
+          color: 'green'
+        })
         this.$router.push('/')
+        this.dialog = false
       }
     },
-
     computed: {
       selectedTemplateName() {
         return 'LoveIs'

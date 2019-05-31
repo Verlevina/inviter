@@ -18,6 +18,7 @@
             order-xs1
           >
             <v-text-field
+              :disabled="disabled"
               outline
               label="Name"
               :rules="[v => !!v || 'Item is required']"
@@ -31,6 +32,7 @@
             xs6
             sm2>
             <v-text-field
+              :disabled="disabled"
               label="Surname"
               v-model="guestInfo.surname"
             >
@@ -41,6 +43,7 @@
             xs6
             sm2>
             <v-text-field
+              :disabled="disabled"
               label="Fathername"
               v-model="guestInfo.fathername"
             >
@@ -51,6 +54,7 @@
             xs6
             sm3>
             <v-text-field
+              :disabled="disabled"
               v-model="guestInfo.email"
               :rules="emailRules"
               label="Guest Email"
@@ -61,23 +65,39 @@
             </v-text-field>
           </v-flex>
           <v-flex
+            v-if="!disabled"
             order-sm5
             order-xs4
             sm2>
 
             <v-btn outline fab color="green"
+
                    small
                    title="update"
                    @click="updateGuest"
             >
-              <v-icon>edit</v-icon>
+              <v-icon>done</v-icon>
             </v-btn>
+          </v-flex>
+          <v-flex
+            v-if="disabled"
+            order-sm5
+            order-xs4
+            sm2>
             <v-btn outline fab color="red"
                    title="delete"
                    @click="deleteGuest"
                    small
             >
               <v-icon>close</v-icon>
+            </v-btn>
+            <v-btn outline fab color="green"
+                   v-if="disabled"
+                   small
+                   title="update"
+                   @click="toggleEdit"
+            >
+              <v-icon>edit</v-icon>
             </v-btn>
           </v-flex>
         </v-layout>
@@ -92,6 +112,7 @@
     props: ['guestInfo', 'index'],
     data() {
       return {
+        disabled: true,
         valid: false,
         emailRules: [
           v => !!v || 'E-mail is required',
@@ -105,6 +126,9 @@
           this.valid = true
         }
       },
+      toggleEdit(){
+        this.disabled = !this.disabled
+      },
       updateGuest() {
         this.validate();
         if (this.$refs.form.validate()) {
@@ -117,10 +141,19 @@
             email: this.guestInfo.email
           }
           this.$store.dispatch('updateGuest', guestInfo)
+          this.disabled = !this.disabled
+          this.$store.dispatch('setAlert', {
+            message: `Guest ${this.guestInfo.name} ${this.guestInfo.surname} ${this.guestInfo.fathername} updated`,
+            color: 'green'
+          })
         }
       },
       deleteGuest() {
         this.$store.dispatch('deleteGuest', this.guestInfo.id)
+        this.$store.dispatch('setAlert', {
+          message: `Guest ${this.guestInfo.name} ${this.guestInfo.surname} ${this.guestInfo.fathername} deleted`,
+          color: 'red'
+        })
       }
     }
   }

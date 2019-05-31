@@ -32,6 +32,7 @@
   export  default {
     computed: {
       weddingTemplates () {
+        console.log(this.$store.getters.getWeddingTemplates)
         return this.$store.getters.getWeddingTemplates
       }
     },

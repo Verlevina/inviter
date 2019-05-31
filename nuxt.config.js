@@ -38,6 +38,10 @@ module.exports = {
     }
   },
   plugins: ['~plugins/vuetify.js'],
-  css: ['~assets/app.styl']
+  css: ['~assets/app.styl'],
+  env: {
+    baseUrl: 'http://localhost:8080'
+  }
+
 }
 

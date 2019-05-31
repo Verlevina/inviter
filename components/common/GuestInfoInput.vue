@@ -88,6 +88,10 @@
             email: this.guestInfo.email
           }
           this.$store.dispatch('setNewGuest', guestInfo)
+          this.$store.dispatch('setAlert', {
+            message: 'Guest upload',
+            color: 'green'
+          })
           this.guestInfo = {
             id:  '',
             name: '',
