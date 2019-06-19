@@ -15,16 +15,20 @@
         <p>{{card.description}}</p>
         <v-btn
           dark
-          @click.stop="sendTrialMail(card.id)"
+          @click.stop="sendTrialMail(card.name)"
         >Trial Mail
         </v-btn>
         <v-btn
-          @click.stop="$router.push(`/weddings/templates/${card.name}`)"
           dark
-        >Trial invite sheet
+        >
+          <a :href="trialSheetLink"
+             target="_blank"
+          >
+            Trial invite sheet
+          </a>
         </v-btn>
         <v-btn
-          @click="selectTemplate(card.id)"
+          @click="selectTemplate(card.name)"
         >Select template
         </v-btn>
       </div>
@@ -47,6 +51,9 @@
       mouseLeaveDelay: null
     }),
     computed: {
+      trialSheetLink() {
+        return `${process.env.baseUrl}/${this.card.name}?test=true`
+      },
       mousePX() {
         return this.mouseX / this.width;
       },
@@ -79,12 +86,12 @@
         }, 1000);
       },
       // Методы логики
-      sendTrialMail(eventId) {
-        console.log(`send trial mail to user: user, id template: ${eventId}`)
+      sendTrialMail(eventName) {
+        console.log(`send trial mail to user: user, id template: ${eventName}`)
       },
-      selectTemplate(eventId) {
-        console.log(`отправка ajax template id: ${eventId}`)
-        this.$store.dispatch('setCurrentUserEventInfo', {templateId: eventId})
+      selectTemplate(eventName) {
+        console.log(`отправка ajax template id: ${eventName}`)
+        this.$store.dispatch('setCurrentUserEventInfo', {templateId: eventName})
         this.$store.dispatch('setCurrentEventType', 'wedding')
         this.$store.dispatch('setAlert', {message: 'Template selected', color: 'green'})
         this.$emit('selectTemplate')
@@ -96,7 +103,10 @@
 <style scoped lang="scss">
   $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
   $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-
+  a {
+    text-decoration: none;
+    color: white;
+  }
   p {
     line-height: 1.5em;
   }
