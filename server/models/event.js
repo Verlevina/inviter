@@ -10,8 +10,14 @@ const EventsSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  comments: [{ body: String, date: Date }],
   eventInfo: {
+    address: {
+      type: String,
+      required: true
+    },
+    date: Date,
+    message: String,
+    time: String,
     bride: {
       name: {
         type: String,
@@ -45,5 +51,6 @@ const EventsSchema = mongoose.Schema({
 
 EventsSchema.pre('save', function (next) {
   this.last_updated = new Date();
+  next();
 });
 module.exports = mongoose.model('Events', EventsSchema)
