@@ -138,7 +138,7 @@
             name: this.guestInfo.name,
             surname: this.guestInfo.surname,
             fathername: this.guestInfo.fathername,
-            email: this.guestInfo.email
+            email: this.guestInfo.email,
           }
           this.$store.dispatch('updateGuest', guestInfo)
           this.disabled = !this.disabled

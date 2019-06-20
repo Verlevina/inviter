@@ -19,7 +19,8 @@
     :key="guest._id"
     >
       {{guest.name}} + {{guest.surname}} + {{guest.fatherName}}
-      ++++ {{guest.email}}
+      ++++ {{guest.email}} +++++++++++++{{  answer(guest.answer.isCome)}}|||||||||||||||||{{guest.answer.message}}
+      ----<a :href="guest.inviteUrl">invite Sheet</a>
     </p>
   </v-container>
 </template>
@@ -31,6 +32,19 @@
         .then((res) => {
           return {event: res.data[0]}
         })
+    },
+    methods: {
+      answer(answer) {
+        if(answer === '') {
+          return 'No Answer yet'
+        }
+        if(answer === 'No') {
+          return 'cannt come'
+        }
+        if(answer === 'Maybe') {
+          return answer        }
+        return 'yes'
+      }
     }
   }
 </script>

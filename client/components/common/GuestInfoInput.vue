@@ -80,12 +80,15 @@
         this.validate();
         if (this.$refs.form.validate()) {
           console.log(`valid`)
+
+          const inviteUrl = `${process.env.baseUrl}`
           const guestInfo = {
             id:  this.guestInfo.id,
             name: this.guestInfo.name,
             surname: this.guestInfo.surname,
             fathername: this.guestInfo.fathername,
-            email: this.guestInfo.email
+            email: this.guestInfo.email,
+            inviteUrl
           }
           this.$store.dispatch('setNewGuest', guestInfo)
           this.$store.dispatch('setAlert', {

@@ -6,7 +6,7 @@ var logger = require('morgan');
 var mongoose = require('./configs/mongo');
 
 var indexRouter = require('./routes/index');
-var loveisRouter = require('./routes/loveis');
+
 var usersRouter = require('./routes/users');
 var partytypesRouter = require('./routes/partytypes');
 var templatesRouter = require('./routes/templates');

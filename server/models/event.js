@@ -45,17 +45,20 @@ const EventsSchema = mongoose.Schema({
       surname: String,
       fathername: String,
       email: String,
-      // inviteUrl: String,
-      // answer: {
-      //   isCome: String,
-      //   message: String
-      // }
+      inviteUrl: String,
+      answer: {
+        isCome: String,
+        message: String
+      }
     }
   ]
 })
 
 EventsSchema.pre('save', function (next) {
   this.last_updated = new Date();
+  this.guestsList.forEach(guest => {
+    guest.inviteUrl +=  '/' + this.templateId + `?id=${this._id},guestId=${guest._id}`
+  })
   next();
 });
 module.exports = mongoose.model('Events', EventsSchema)

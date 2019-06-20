@@ -5,8 +5,17 @@ const randomEvent = require('../common/randomDatas/randomEventData')()
 
 /* GET users listing. */
 router.post('/', function (req, res, next) {
+  const currentEvent = {
+    ...req.body
+  }
+  currentEvent.guestsList.forEach(guest=> {
+    guest.answer = {
+      isCome: '',
+      message: ''
+    }
+  })
   const event = new Event({
-    ...req.body,
+    ...currentEvent,
   })
   event.save((err, event) => {
     if (err) {
