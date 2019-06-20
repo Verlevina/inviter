@@ -149,9 +149,7 @@ const store = () => {
         console.log('send HTTP')
         axios.post(`${process.env.baseUrl}${process.env.API.events}`,vuexContext.state.user.currentEvent)
           .then(res => {
-            console.log(res.data.message)
             const color = res.data.status === 'success' ? 'green' : 'red';
-            console.log(color)
           vuexContext.dispatch('setAlert', {
             message: res.data.message,
             color

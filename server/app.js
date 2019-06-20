@@ -31,7 +31,7 @@ app.get('/loveis', function(req, res){
   res.sendFile(__dirname + '/templateViews/loveisTemplate.html');
 });
 app.use('/', indexRouter);
-app.use('/loveis', loveisRouter);
+// app.use('/loveis', loveisRouter);
 app.use('/users', usersRouter);
 app.use('/partytypes', partytypesRouter);
 app.use('/templates', templatesRouter);

@@ -44,7 +44,12 @@ const EventsSchema = mongoose.Schema({
       },
       surname: String,
       fathername: String,
-      email: String
+      email: String,
+      // inviteUrl: String,
+      // answer: {
+      //   isCome: String,
+      //   message: String
+      // }
     }
   ]
 })

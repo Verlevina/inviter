@@ -3,7 +3,7 @@
     <v-card
 
   class= "card"
-  @click="$router.push(`/user-events/${userEvent.id}`)"
+  @click="$router.push(`/user-events/${userEvent._id}`)"
 
   >
     <v-img

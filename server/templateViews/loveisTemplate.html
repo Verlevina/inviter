@@ -21,10 +21,10 @@
 
 					<div class="border">
 						<div class="border-top"></div>
-						<div class="center"><p> {{ inviteInfo.bride.name + ' ' + inviteInfo.bride.surname + ' ' +
-							inviteInfo.bride.fathername}} & {{ inviteInfo.groom.name + ' ' + inviteInfo.groom.surname +
-							' ' +
-							inviteInfo.groom.fathername}}
+						<div class="center"><p> {{ inviteInfo.eventInfo.bride.name}}
+							{{inviteInfo.eventInfo.bride.surname}} {{inviteInfo.eventInfo.bride.fatherName}} &
+							{{ inviteInfo.eventInfo.groom.name }} {{inviteInfo.eventInfo.groom.surname}}
+							{{inviteInfo.eventInfo.groom.fatherName}}
 							</p>
 						</div>
 						<div class="border-bottom"></div>
@@ -37,7 +37,7 @@
 			<v-flex sm6 class="info-wrapper">
 				<h3>{{inviteInfo.guest.name}}
 					{{inviteInfo.guest.surname}}
-					{{inviteInfo.guest.fathername}}!
+					{{inviteInfo.guest.fatherName}}!
 				</h3>
 				<p>
 					It is with great pleasure that we invite you to a solemn event dedicated to our marriage
@@ -46,13 +46,13 @@
 				     height="100px"
 				     src="https://st2.depositphotos.com/2743147/9292/i/450/depositphotos_92920470-stock-photo-heart-isolated-on-white-and.jpg">
 				<p>
-					Which will take place on <strong style="color: red">{{inviteInfo.date}} in
-					{{inviteInfo.time}}</strong></p>
+					Which will take place on <strong style="color: red">{{inviteInfo.eventInfo.date}} in
+					{{inviteInfo.eventInfo.time}}</strong></p>
 				<p>
 					by the address:
-					<span> {{inviteInfo.address}} </span>
+					<span> {{inviteInfo.eventInfo.address}} </span>
 				</p>
-				<p>{{inviteInfo.message}}</p>
+				<p>{{inviteInfo.eventInfo.message}}</p>
 				<p>
 					We will be happy to see you at our wedding
 				</p>
@@ -97,32 +97,26 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
 <script>
-	  let event = {};
-	if (true) {
-	  event = randomEvent
-	}
-	console.log(randomEvent)
-
   var app = new Vue({
     el: '#app',
+    dialog: true,
     data: {
       animate: false,
       answer: {
         message: '',
         isCome: ''
-      }
+      },
+      inviteInfo: {}
     },
-    computed: {
-      inviteInfo() {
-        axios.get('/')
-        return event
-      }
-      // inviteInfo() {
-      //   if(this.$route.id === 'test') {
-      //     this.$store.dispatch('')
-      //   }
-      // }
-    },
+    beforeMount: function () {
+        const self = this;
+        axios.get('/events/test')
+          .then(res => {
+            console.log(res.data)
+            self.inviteInfo = res.data
+          })
+          .catch(err => console.log(err))
+      },
     methods: {
       submitAnswer(ans) {
         const answer = {
@@ -137,10 +131,3 @@
 
 </body>
 </html>
-
-
-<style scoped lang="scss">
-	@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,600i,700i&display=swap');
-
-
-</style>

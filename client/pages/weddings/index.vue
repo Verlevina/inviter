@@ -167,9 +167,7 @@
 
       },
       async completeEventCreate() {
-
         await this.$store.dispatch('sendEventInfo')
-
         this.$router.push('/')
         this.dialog = false
       }

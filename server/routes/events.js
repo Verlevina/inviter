@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
 const Event = require('../models/event');
+const randomEvent = require('../common/randomDatas/randomEventData')()
 
 /* GET users listing. */
 router.post('/', function (req, res, next) {
-  const event = new Event(req.body)
+  const event = new Event({
+    ...req.body,
+  })
   event.save((err, event) => {
     if (err) {
       res.status(500).json(err)
@@ -20,6 +23,29 @@ router.post('/', function (req, res, next) {
 
 router.get('/', function (req, res, next) {
   Event.find({}, (err, events) => {
+    if (err) {
+      res.status(500).json(err)
+    } else {
+      console.log('success')
+      res.status(201).send(events)
+    }
+  })
+})
+
+router.get('/:id', function (req, res, next) {
+  if (req.params.id === 'test') {
+    console.log(randomEvent)
+    const event = {
+      eventInfo: randomEvent.eventInfo,
+      partyType: randomEvent.partyType,
+      templateId: randomEvent.templateId,
+      last_updated: randomEvent.last_updated,
+      guest: randomEvent.guestsList[0]
+    }
+    console.log(event)
+    res.status(201).send(event)
+  } else {
+    Event.find({_id: req.params.id}, (err, events) => {
       if (err) {
         res.status(500).json(err)
       } else {
@@ -27,89 +53,8 @@ router.get('/', function (req, res, next) {
         res.status(201).send(events)
       }
     })
+  }
 })
 
 
-
 module.exports = router;
-  // [
-  //   {
-  //     partyType: 'wedding',
-  //     templateId: 'LoveIs',
-  //     eventInfo:
-  //       {
-  //         bride:
-  //           {
-  //             name: 'Вероника Александровна Левитина',
-  //             surname: 'Вероника Александровна Левитина',
-  //             fathername: 'Вероника Александровна Левитина'
-  //           },
-  //         groom:
-  //           {
-  //             name: 'Вероника Александровна Левитина',
-  //             surname: 'Вероника Александровна Левитина',
-  //             fathername: 'Вероника Александровна Левитина'
-  //           },
-  //         date: '2019-03-19',
-  //         time: '04:22',
-  //         message: '',
-  //         address: 'Мкр. Юбилейный, ул. Пионерская, д. 10, кв. 30'
-  //       },
-  //     guestsList:
-  //       [{
-  //         id: 1,
-  //         name: 'Вероника Александровна Левитина',
-  //         surname: '',
-  //         fathername: '',
-  //         email: 'Levitihnava@gmail.com'
-  //       },
-  //         {
-  //           id: 2,
-  //           name: ' Левитина',
-  //           surname: '',
-  //           fathername: '',
-  //           email: 'Levitinava@gmail.com'
-  //         }
-  //       ]
-  //   },
-  //   {
-  //     partyType: 'wedding',
-  //     templateId: 'LoveIs',
-  //     eventInfo:
-  //       {
-  //         bride:
-  //           {
-  //             name: 'Вероника ',
-  //             surname: 'Вероника ',
-  //             fathername: 'Левитина'
-  //           },
-  //         groom:
-  //           {
-  //             name: 'Вероника Александровна Левитина',
-  //             surname: 'Вероника Александровна Левитина',
-  //             fathername: 'Вероника Александровна Левитина'
-  //           },
-  //         date: '2019-02-19',
-  //         time: '04:22',
-  //         message: '',
-  //         address: 'Мкр. Юбилейный, ул. Пионерская, д. 10, кв. 30'
-  //       },
-  //     guestsList:
-  //       [
-  //         {
-  //           id: 1,
-  //           name: 'Вероника Александровна Левитина',
-  //           surname: '',
-  //           fathername: '',
-  //           email: 'Levitinava@gmail.com'
-  //         },
-  //         {
-  //           id: 2,
-  //           name: 'Вероника Александровна Левитина',
-  //           surname: '',
-  //           fathername: '',
-  //           email: 'Levitinava@gmail.com'
-  //         }
-  //       ]
-  //   }
-  // ]

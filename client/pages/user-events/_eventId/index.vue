@@ -3,47 +3,34 @@
     <h2
       class="display-2 text-xs-center pb-3"
     > Your event</h2>
-    <h1>{{event.eventInfo.bride.name}} + {{event.eventInfo.groom.name}} </h1>
+    <h1>{{event.partyType}}</h1>
+    <p>selected template: <strong>{{event.templateId}}</strong></p>
+    <p>date <strong>{{event.eventInfo.date}}</strong></p>
+    <p>time <strong>{{event.eventInfo.time}}</strong></p>
+    <p>Bride <strong>{{event.eventInfo.bride.name}} + {{event.eventInfo.bride.surname}} + {{event.eventInfo.bride
+      .fathername}}</strong></p>
+    <p>Groom <strong>{{event.eventInfo.groom.name}} + {{event.eventInfo.groom.surname}} + {{event.eventInfo.groom
+      .fathername}}</strong></p>
+    <p>address <strong>{{event.eventInfo.address}}</strong></p>
+    <p>message <strong>{{event.eventInfo.message}}</strong></p>
+
+    <p
+    v-for="guest in event.guestsList"
+    :key="guest._id"
+    >
+      {{guest.name}} + {{guest.surname}} + {{guest.fatherName}}
+      ++++ {{guest.email}}
+    </p>
   </v-container>
 </template>
 <script>
+  import axios from 'axios'
   export default {
-    async asyncData({req, res}) {
-      let event;
-     event =   new Promise((resolve, reject) => {
-        setTimeout((id) => {
-          resolve({
-              event: {
-                id: id,
-                partyType: 'wedding',
-                templateId: '1',
-                eventInfo: {
-                  bride: {
-                    name: 'Veronika',
-                    surname: '',
-                    fathername: ''
-                  }
-                  ,
-                  groom: {
-                    name: 'Denis',
-                    surname: '',
-                    fathername: ''
-                  }
-                  ,
-                  date: '2018-05-29',
-                  time: '10-20',
-                  address: 'Pionerskaya, 10, 30',
-                  message: 'hello, we are waiting you',
-                },
-                guestsList: []
-              }
-            })
-        }, 2000)
-      }).then(event => {
-        return {...event}
-      })
-return event
-
+    asyncData (context) {
+      return axios.get(`${context.env.baseUrl}/events/${context.params.eventId}`)
+        .then((res) => {
+          return {event: res.data[0]}
+        })
     }
   }
 </script>
