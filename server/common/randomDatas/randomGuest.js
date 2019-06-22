@@ -5,6 +5,6 @@ module.exports = function () {
   return {
     ...randomMan(),
     email: faker.internet.email(),
-    inviteUrl: faker.internet.url
+    inviteUrl: faker.internet.url()
   }
 }

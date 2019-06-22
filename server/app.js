@@ -6,6 +6,7 @@ var logger = require('morgan');
 var mongoose = require('./configs/mongo');
 
 var indexRouter = require('./routes/index');
+var inviteRouter = require('./routes/invite');
 
 var usersRouter = require('./routes/users');
 var partytypesRouter = require('./routes/partytypes');
@@ -31,6 +32,7 @@ app.get('/loveis', function(req, res){
   res.sendFile(__dirname + '/templateViews/loveisTemplate.html');
 });
 app.use('/', indexRouter);
+app.use('/invite', inviteRouter);
 // app.use('/loveis', loveisRouter);
 app.use('/users', usersRouter);
 app.use('/partytypes', partytypesRouter);

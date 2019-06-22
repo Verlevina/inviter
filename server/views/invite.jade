@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1= partyType
+
+
+    p  We are invite you to our wedding
+
+    p
+        strong #{eventInfo.bride.name} #{eventInfo.bride.surname} #{eventInfo.bride.fathername}
+    p and
+    p
+        strong #{eventInfo.groom.name} #{eventInfo.groom.surname} #{eventInfo.groom.fathername}
+    p witch will be on
+        strong #{eventInfo.date}  at #{eventInfo.time}
+    p in
+        strong #{eventInfo.address}
+    p #{eventInfo.message}
+    p your email #{guest.email}
+    p will you come?
+    p
+        strong #{guest.name} #{guest.surname} #{guest.fathername}

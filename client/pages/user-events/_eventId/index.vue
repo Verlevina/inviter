@@ -20,7 +20,9 @@
     >
       {{guest.name}} + {{guest.surname}} + {{guest.fatherName}}
       ++++ {{guest.email}} +++++++++++++{{  answer(guest.answer.isCome)}}|||||||||||||||||{{guest.answer.message}}
-      ----<a :href="guest.inviteUrl">invite Sheet</a>
+      ----<a
+      target="_blank"
+      :href="guest.inviteUrl">invite Sheet</a>
     </p>
   </v-container>
 </template>

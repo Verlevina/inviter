@@ -57,7 +57,7 @@ const EventsSchema = mongoose.Schema({
 EventsSchema.pre('save', function (next) {
   this.last_updated = new Date();
   this.guestsList.forEach(guest => {
-    guest.inviteUrl +=  '/' + this.templateId + `?id=${this._id},guestId=${guest._id}`
+    guest.inviteUrl +=  '/invite' + `?id=${this._id}&guestId=${guest._id}`
   })
   next();
 });
