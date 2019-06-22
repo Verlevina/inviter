@@ -19,27 +19,29 @@ router.get('/', async function (req, res, next) {
   } else
     if (req.query.id) {
         const eventArray = await Event.find({_id: req.query.id}, (err, dbEvent) => {
+          if (err) {
+            res.render('error',{message: 'not found', error: {status: 404, stack: 'we have no sutch event or guest'}});
+
+          }
           return dbEvent;
         })
         event =  JSON.parse((JSON.stringify(eventArray[0])))
         if (req.query.guestId !== 'test') {
             console.log('hit')
+          let isGuest = true
             event.guestsList.forEach(guest => {
               if (guest._id == req.query.guestId) {
                 event.guest = guest
+                isGuest = !isGuest
               }
             })
+          if (isGuest) {
+            res.render('error',{message: 'not found', error: {status: 404, stack: 'we have no sutch event or guest'}});
+          }
         } else {
-            console.log('guest = test')
-          console.log(event)
           event.guest = randomGuest
-          console.log('fron add random guest')
-          console.log(event)
         }
   }
-  console.log('7|||||||||||')
-  console.log(event)
-  console.log('||||||||||')
   res.render('invite', {...event});
 
 

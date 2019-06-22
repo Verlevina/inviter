@@ -446,11 +446,12 @@
       <workItem from="1560970784539" duration="14910000" />
       <workItem from="1561145200433" duration="642000" />
       <workItem from="1561146049156" duration="599000" />
+      <workItem from="1561203628185" duration="543000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184873000" />
+    <option name="totallyTimeSpent" value="185416000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -465,16 +466,16 @@
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.83086056" visible="true" weight="0.021367522" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8293769" visible="true" weight="0.021367522" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.20132013" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23542354" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32893288" />
-      <window_info id="Structure" order="1" sideWeight="0.16913946" side_tool="true" visible="true" weight="0.021367522" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23542354" />
+      <window_info id="Structure" order="1" sideWeight="0.17062314" side_tool="true" visible="true" weight="0.021367522" />
       <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.25852585" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.18300654" side_tool="true" visible="true" weight="0.16227607" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
