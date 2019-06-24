@@ -52,7 +52,7 @@
     }),
     computed: {
       trialSheetLink() {
-        return `${process.env.baseUrl}/${this.card.name}?test=true`
+        return `${process.env.baseUrl}/invite?test=true`
       },
       mousePX() {
         return this.mouseX / this.width;

@@ -50,7 +50,6 @@ const store = () => {
         state.templates = {...templates}
       },
       clearCurrentUserEventInfo(state) {
-
         state.user.currentEvent = {
           partyType: '',
           templateId: '',
@@ -92,7 +91,6 @@ const store = () => {
           state.user.currentEvent.guestsList[currentGuestIndex] = guest
       },
       setCurrentUserEventInfo(state, payload) {
-        console.log(payload)
         Object.keys(payload).forEach(item => {
           state.user.currentEvent[item] = payload[item]
         })
