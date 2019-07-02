@@ -6,6 +6,7 @@ const EventsSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  complete: Boolean,
   templateId: {
     type: String,
     required: true

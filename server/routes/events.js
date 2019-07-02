@@ -15,7 +15,7 @@ router.post('/', function (req, res, next) {
     }
   })
   const event = new Event({
-    ...currentEvent,
+    ...currentEvent
   })
   event.save((err, event) => {
     if (err) {
@@ -24,7 +24,9 @@ router.post('/', function (req, res, next) {
       console.log('success')
       res.status(201).send({
         status: 'success',
-        message: 'your event already added'
+        message: 'your event already added',
+        id: event._id,
+        guestId: event.guestsList[0]._id
       })
     }
   })
@@ -37,6 +39,18 @@ router.get('/', function (req, res, next) {
     } else {
       console.log('success')
       res.status(201).send(events)
+    }
+  })
+})
+
+router.delete('/:id', function(req, res, next) {
+  console.log( `delete: ${req.params.id}`)
+  User.deleteOne({_id: req.params.id}, (err, event) => {
+    if (err) {
+      res.status(500).json(err)
+    } else {
+      console.log('success')
+      res.status(201).json({ status: 'success', message: 'event deleted'})
     }
   })
 })

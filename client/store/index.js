@@ -11,9 +11,12 @@ const store = () => {
         name: 'Вероника',
         email: 'levitinava@gmail.com',
         userEvents: [],
+        inviteTestLink: '',
+        inviteTestId: '',
         currentEvent: {
           partyType: '',
           templateId: '',
+          complete: false,
           eventInfo: {
             bride: {
               name: '',
@@ -43,6 +46,9 @@ const store = () => {
       templates: {}
     },
     mutations: {
+      completeCreatingEvent(state) {
+        state.user.currentEvent.complete = true
+      },
       setPartyTypes (state, partyTypes) {
         state.partyTypes = partyTypes
       },
@@ -53,6 +59,7 @@ const store = () => {
         state.user.currentEvent = {
           partyType: '',
           templateId: '',
+          complete:false,
           eventInfo: {
             bride: {
               name: '',
@@ -109,9 +116,18 @@ const store = () => {
       },
       addUserEvent(state, userEvent) {
         state.user.userEvents.push(userEvent)
+      },
+      updateInviteTestLink(state, link) {
+        state.user.inviteTestLink = link
+
+      } ,
+      updateInviteTestId(state, id) {
+        state.user.inviteTestid = id
+
       }
     },
     actions: {
+
       setAlert(vuexContext, alert){
         vuexContext.commit('setAlert', alert)
         setTimeout(()=>{
@@ -148,16 +164,34 @@ const store = () => {
         axios.post(`${process.env.baseUrl}${process.env.API.events}`,vuexContext.state.user.currentEvent)
           .then(res => {
             const color = res.data.status === 'success' ? 'green' : 'red';
-          vuexContext.dispatch('setAlert', {
+            vuexContext.commit('updateInviteTestLink', `${process.env.baseUrl}/invite?id=${res.data.id}&guestId=${res.data.guestId}`)
+            vuexContext.commit('updateInviteTestId', res.data.id)
+            vuexContext.dispatch('setAlert', {
             message: res.data.message,
             color
           })
         })
+      },
+      sendUpdateEventInfo(vuexContext) {
+        vuexContext.commit('completeCreatingEvent')
+        axios.put(`${process.env.baseUrl}${process.env.API.events}`,vuexContext.state.user.currentEvent)
+          .then(res => {
+            const color = res.data.status === 'success' ? 'green' : 'red';
+            vuexContext.dispatch('setAlert', {
+              message: res.data.message,
+              color
+            })
+          })
 
-        vuexContext.commit("addUserEvent", vuexContext.state.user.currentEvent)
-        console.log(vuexContext.state.user.currentEvent)
-        console.log(vuexContext.state.user.userEvents)
         vuexContext.commit("clearCurrentUserEventInfo")
+      },
+      deleteEventReq (vuexContext) {
+        console.log(`deleteEvent request`)
+        console.log(vuexContext.state.user.inviteTestId)
+        axios.delete(`${process.env.baseUrl}${process.env.API.events}/${vuexContext.state.user.inviteTestId}`)
+          .then(res => {
+            console.log(res.data)
+          })
       }
     },
     getters: {

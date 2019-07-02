@@ -85,13 +85,14 @@
 
                       <v-divider></v-divider>
                       Click to look your guests invite sheets in new tab:
-                      <a :href='testInviteSheetUrl' target="_blank">Invite Link</a>
+                      <a :href='inviteTestLink' target="_blank">Invite Link</a>
                       <h3 class="display-3">Guests list</h3>
                       <GuestsInfoTable></GuestsInfoTable>
                     </v-card-text>
                     <v-card-actions>
                       <v-spacer></v-spacer>
-                      <v-btn color="red darken-1" flat="flat" @click="dialog = false">Stop! something wrong!</v-btn>
+                      <v-btn color="red darken-1" flat="flat" @click="returnToCreateEvent">Stop! something
+                        wrong!</v-btn>
                       <v-btn color="green darken-1" @click="completeEventCreate">All right! Send Messages!!!</v-btn>
                     </v-card-actions>
                   </v-card>
@@ -138,6 +139,10 @@
       }).catch(e => console.error(e))
     },
     methods: {
+      returnToCreateEvent () {
+        this.dialog = false
+        this.$store.dispatch('deleteEventReq')
+      },
       selectTemplate() {
         this.step = 2
         this.completeSteps.add(1)
@@ -157,28 +162,23 @@
             return
           }
         }
-        this.dialog = true
-       // const eventInfo = this.$store.getters.getEventInfo
-
         this.$store.dispatch('setAlert', {
           message: 'Guests list complete! We are ready to start invite your guests, please, check all info',
           color: 'green'
         })
-
+        await this.$store.dispatch('sendEventInfo')
+        this.dialog = true
+       // const eventInfo = this.$store.getters.getEventInfo
       },
       async completeEventCreate() {
-        await this.$store.dispatch('sendEventInfo')
+        await this.$store.dispatch('sendUpdateEventInfo')
         this.$router.push('/')
         this.dialog = false
       }
     },
     computed: {
-      selectedTemplateName() {
-        return 'LoveIs'
-      },
-      testInviteSheetUrl() {
-        return '/weddings/templates/' + this.selectedTemplateName +
-          '?id=test'
+      inviteTestLink() {
+        return this.$store.state.user.inviteTestLink
       }
     }
   }
