@@ -7,7 +7,6 @@ var mongoose = require('./configs/mongo');
 
 var indexRouter = require('./routes/index');
 var inviteRouter = require('./routes/invite');
-
 var usersRouter = require('./routes/users');
 var partytypesRouter = require('./routes/partytypes');
 var templatesRouter = require('./routes/templates');
