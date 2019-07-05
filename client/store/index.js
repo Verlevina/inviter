@@ -124,9 +124,15 @@ const store = () => {
       updateInviteTestId(state, id) {
         state.user.inviteTestid = id
 
+      },
+      completeEvent(state) {
+        state.user.currentEvent.complete = true
       }
     },
     actions: {
+      completeEvent(vuexContext) {
+        vuexContext.commit('completeEvent')
+      },
 
       setAlert(vuexContext, alert){
         vuexContext.commit('setAlert', alert)
@@ -163,6 +169,9 @@ const store = () => {
         console.log('send HTTP')
         axios.post(`${process.env.baseUrl}${process.env.API.events}`,vuexContext.state.user.currentEvent)
           .then(res => {
+            const currentEvent = vuexContext.state.user.currentEvent
+            currentEvent._id = res.data.id
+            vuexContext.commit('setCurrentUserEventInfo', currentEvent)
             const color = res.data.status === 'success' ? 'green' : 'red';
             vuexContext.commit('updateInviteTestLink', `${process.env.baseUrl}/invite?id=${res.data.id}&guestId=${res.data.guestId}`)
             vuexContext.commit('updateInviteTestId', res.data.id)
@@ -174,7 +183,7 @@ const store = () => {
       },
       sendUpdateEventInfo(vuexContext) {
         vuexContext.commit('completeCreatingEvent')
-        axios.put(`${process.env.baseUrl}${process.env.API.events}`,vuexContext.state.user.currentEvent)
+        axios.post(`${process.env.baseUrl}${process.env.API.events}`, vuexContext.state.user.currentEvent)
           .then(res => {
             const color = res.data.status === 'success' ? 'green' : 'red';
             vuexContext.dispatch('setAlert', {

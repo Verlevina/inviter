@@ -62,8 +62,9 @@
           <GuestListGetter></GuestListGetter>
 
           <v-layout>
+            <v-btn @click="step = 2" flat>Back</v-btn>
             <v-btn flat disabled>Continue</v-btn>
-            <v-btn @click="step = 2" flat>back</v-btn>
+
 
             <template>
               <v-layout row justify-center>
@@ -91,7 +92,7 @@
                     </v-card-text>
                     <v-card-actions>
                       <v-spacer></v-spacer>
-                      <v-btn color="red darken-1" flat="flat" @click="returnToCreateEvent">Stop! something
+                      <v-btn color="red darken-1" flat="flat" @click="returnToCreateEvent">Stop! Something
                         wrong!</v-btn>
                       <v-btn color="green darken-1" @click="completeEventCreate">All right! Send Messages!!!</v-btn>
                     </v-card-actions>
@@ -141,7 +142,6 @@
     methods: {
       returnToCreateEvent () {
         this.dialog = false
-        this.$store.dispatch('deleteEventReq')
       },
       selectTemplate() {
         this.step = 2
@@ -166,11 +166,13 @@
           message: 'Guests list complete! We are ready to start invite your guests, please, check all info',
           color: 'green'
         })
+        this.$store.dispatch('completeEvent')
         await this.$store.dispatch('sendEventInfo')
         this.dialog = true
        // const eventInfo = this.$store.getters.getEventInfo
       },
       async completeEventCreate() {
+
         await this.$store.dispatch('sendUpdateEventInfo')
         this.$router.push('/')
         this.dialog = false

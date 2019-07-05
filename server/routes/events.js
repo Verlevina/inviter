@@ -6,33 +6,13 @@ const Event = require('../models/event');
 /* GET users listing. */
 router.post('/', function (req, res, next) {
   if (req.body._id) {
-    // const event = new Event({
-    //   ...req.body
-    // })
-
-
-    // Event.findOne({_id: req.body._id}, (err, event) => {
-    //   if (err) {
-    //     return res.status(500).send(err)
-    //   }
-    //   event = req.body
-    //   console.log(event)
-    //   event.last_updated = new Date()
-    //   event.save((err, event) => {
-    //     if(err) {
-    //       res.status(500).json(err)
-    //     } else {
-    //       res.status(201).send({
-    //         status: 'success',
-    //         message: 'your event already updated',
-    //         id: event._id,
-    //       });
-    //     }
-    //
-    //  })
+  if (req.body.complete) {
+    req.body.guestsList.forEach(guest => {
+      //TODO: function mail sending
+      console.log('mail SENDING to' + guest.email)
+    })
+  }
     const updatedEvent = {...req.body};
-
-    // Event.updateOne({_id: req.body._id}, {$set: updatedEvent})
     Event.findOne({_id: req.body._id}, (err, event) => {
       event.eventInfo = updatedEvent.eventInfo
       event.partyType = updatedEvent.partyType
@@ -86,7 +66,7 @@ router.post('/', function (req, res, next) {
 });
 
 router.get('/', function (req, res, next) {
-  Event.find({}, (err, events) => {
+  Event.find({complete: true}, (err, events) => {
     if (err) {
       res.status(500).json(err)
     } else {
@@ -97,8 +77,8 @@ router.get('/', function (req, res, next) {
 })
 
 router.delete('/:id', function (req, res, next) {
-  console.log(`delete: ${req.params.id}`)
-  Event.deleteOne({_id: req.params.id}, (err, event) => {
+  console.log(`delete: ${req.params._id}`)
+  Event.deleteOne({_id: req.params._id}, (err, event) => {
     if (err) {
       res.status(500).json(err)
     } else {

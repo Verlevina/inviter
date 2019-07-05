@@ -61,7 +61,11 @@
           name:'',
           surname:'',
           fathername:'',
-          email: ''
+          email: '',
+          answer: {
+            isCome: "",
+            message: ""
+          }
         },
         valid: false,
         emailRules: [
@@ -88,6 +92,7 @@
             surname: this.guestInfo.surname,
             fathername: this.guestInfo.fathername,
             email: this.guestInfo.email,
+            answer: this.guestInfo.answer,
             inviteUrl
           }
           this.$store.dispatch('setNewGuest', guestInfo)
@@ -100,7 +105,11 @@
             name: '',
             surname: '',
             fathername: '',
-            email: ''
+            email: '',
+            answer: {
+              isCome: "",
+              message: ""
+            }
           }
         }
       }

@@ -139,6 +139,10 @@
             surname: this.guestInfo.surname,
             fathername: this.guestInfo.fathername,
             email: this.guestInfo.email,
+            answer: {
+              isCome: "",
+              message: ""
+            }
           }
           this.$store.dispatch('updateGuest', guestInfo)
           this.disabled = !this.disabled
