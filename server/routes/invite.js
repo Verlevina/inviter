@@ -3,11 +3,13 @@ var router = express.Router();
 const Event = require('../models/event')
 const randomEvent = require('../common/randomDatas/randomEventData')()
 const randomGuest = require('../common/randomDatas/randomGuest')()
+const MarkupTemplatesSchema = require('../models/markupTemplates');
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
   console.log(req.query)
   let event;
+  let markup;
   if (req.query.test) {
     event = {
       eventInfo: randomEvent.eventInfo,
@@ -41,8 +43,19 @@ router.get('/', async function (req, res, next) {
         } else {
           event.guest = randomGuest
         }
+
   }
-  res.render('invite', {...event});
+
+  //get markup:
+  MarkupTemplatesSchema.findOne({name: event.templateId}, (err, bdmarkup) => {
+    if (err) {
+      res.render('error',{message: 'not found', error: {status: 404, stack: 'we have no template'}});
+    }
+    markup = bdmarkup
+    console.log(markup)
+  })
+
+  res.render('invite', {...event, ...markup});
 
 
 

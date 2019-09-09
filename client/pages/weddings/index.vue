@@ -38,6 +38,9 @@
 
       <v-stepper-items>
         <v-stepper-content step="1">
+
+          <!--выбор шаблона-->
+
           <WeddingTemplatesPreview
             @selectTemplate="selectTemplate"
           ></WeddingTemplatesPreview>
@@ -49,6 +52,9 @@
         </v-stepper-content>
 
         <v-stepper-content step="2">
+
+          <!--ввод информации о свадьбе-->
+
           <WedingInfoGetter
             @weddingInfoGetterComplete="weddingInfoGetterComplete"
           ></WedingInfoGetter>
@@ -58,7 +64,7 @@
         </v-stepper-content>
 
         <v-stepper-content step="3">
-
+<!--ввод списка гостей-->
           <GuestListGetter></GuestListGetter>
 
           <v-layout>
