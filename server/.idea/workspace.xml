@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2bcac005-098e-4c3c-900c-5e89aac70391" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/components/guests/guestAnnswerList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/components/guests/guestAnnswerList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/components/user/UserEvents.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/components/user/UserEvents.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/pages/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/pages/user-events/_eventId/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/pages/user-events/_eventId/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/partytypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/partytypes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.60807294">
+    <splitter split-orientation="horizontal" split-proportion="0.38450292">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="invite.jade" pinned="false" current-in-tab="false">
@@ -142,7 +144,6 @@
         <option value="$PROJECT_DIR$/app/index.js" />
         <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/views/index.jade" />
-        <option value="$PROJECT_DIR$/routes/partytypes.js" />
         <option value="$PROJECT_DIR$/configs/mongo.js" />
         <option value="$PROJECT_DIR$/models/templates.js" />
         <option value="$PROJECT_DIR$/routes/templates.js" />
@@ -167,6 +168,7 @@
         <option value="$PROJECT_DIR$/routes/events.js" />
         <option value="$PROJECT_DIR$/routes/invite.js" />
         <option value="$PROJECT_DIR$/models/markupTemplates.js" />
+        <option value="$PROJECT_DIR$/routes/partytypes.js" />
       </list>
     </option>
   </component>
@@ -179,9 +181,10 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="706" />
+    <option name="y" value="115" />
+    <option name="width" value="1283" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -320,12 +323,12 @@
       <workItem from="1562174628037" duration="599000" />
       <workItem from="1562246180949" duration="3632000" />
       <workItem from="1562334033615" duration="2826000" />
-      <workItem from="1568017205349" duration="647000" />
+      <workItem from="1568017205349" duration="1286000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79881000" />
+    <option name="totallyTimeSpent" value="80520000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -337,10 +340,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="706" y="115" width="1283" height="1047" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8997821" visible="true" weight="0.2681624" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8997821" visible="true" weight="0.20160642" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3278328" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50105375" side_tool="true" weight="0.23965141" />
@@ -594,13 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/partytypes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -711,6 +707,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/partytypes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
         </state>
       </provider>
     </entry>

@@ -13,53 +13,35 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.41965568">
+    <splitter split-orientation="horizontal" split-proportion="0.46919432">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="UserEvents.vue" pinned="false" current-in-tab="false">
+          <file leaf-file-name="UserEvents.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/components/user/UserEvents.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1258">
-                  <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/weddings/index.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
-                  <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
+                <state relative-caret-position="595">
+                  <caret line="95" column="8" lean-forward="true" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
                   <folding>
-                    <element signature="e#3570#3656#0" expanded="true" />
+                    <element signature="e#1628#1693#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="WeddingInfoGetter.vue" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/components/wedding/WeddingInfoGetter.vue">
+          <file leaf-file-name="UserEventPreview.vue" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/components/user/UserEventPreview.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="586">
-                  <caret line="251" column="53" lean-forward="true" selection-start-line="251" selection-start-column="53" selection-end-line="251" selection-end-column="53" />
+                <state relative-caret-position="119">
+                  <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="GuestListGetter.vue" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/components/common/GuestListGetter.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="399">
-                  <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GuestInfoItem.vue" pinned="false" current-in-tab="true">
+          <file leaf-file-name="GuestInfoItem.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/components/common/GuestInfoItem.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1653">
-                  <caret line="127" column="8" lean-forward="true" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="8" />
+                <state relative-caret-position="-1237">
+                  <caret line="56" column="34" lean-forward="true" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
                 </state>
               </provider>
             </entry>
@@ -67,20 +49,8 @@
           <file leaf-file-name="GuestInfoInput.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/components/common/GuestInfoInput.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1139">
+                <state relative-caret-position="518">
                   <caret line="67" column="11" lean-forward="true" selection-start-line="67" selection-start-column="11" selection-end-line="67" selection-end-column="11" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="LoveIs.vue" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/weddings/templates/LoveIs.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-                  <folding>
-                    <element signature="n#style#0;n#h3#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -88,8 +58,17 @@
           <file leaf-file-name="WeddingTemplatePreview.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/components/wedding/WeddingTemplatePreview.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1428">
+                <state relative-caret-position="212">
                   <caret line="84" column="26" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="WeddingTemplatesPreview.vue" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/components/wedding/WeddingTemplatesPreview.vue">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="532">
+                  <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
                 </state>
               </provider>
             </entry>
@@ -108,22 +87,43 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/user-events/_eventId/index.vue">
+            <entry file="file://$PROJECT_DIR$/pages/index.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="705">
-                  <caret line="63" column="37" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
+                <state relative-caret-position="527">
+                  <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/store/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="476">
+                  <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
                   <folding>
-                    <element signature="e#2013#2038#0" expanded="true" />
+                    <element signature="e#0#21#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="guestAnnswerList.vue" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/components/guests/guestAnnswerList.vue">
+          <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pages/user-events/index.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
+                <state relative-caret-position="340">
+                  <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pages/user-events/_eventId/index.vue">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="450">
+                  <caret line="35" column="6" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="35" selection-end-column="6" />
+                  <folding>
+                    <element signature="e#864#889#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -198,19 +198,19 @@
         <option value="$PROJECT_DIR$/components/wedding/WeddingInfoGetter.vue" />
         <option value="$PROJECT_DIR$/components/createEvent/EventTemplatePreview.vue" />
         <option value="$PROJECT_DIR$/nuxt.config.js" />
-        <option value="$PROJECT_DIR$/pages/index.vue" />
-        <option value="$PROJECT_DIR$/components/user/UserEvents.vue" />
         <option value="$PROJECT_DIR$/components/navigation/ToolBar.vue" />
         <option value="$PROJECT_DIR$/components/page-blocks/PageDescription.vue" />
         <option value="$PROJECT_DIR$/components/common/GuestListGetter.vue" />
         <option value="$PROJECT_DIR$/components/user/UserEventPreview.vue" />
         <option value="$PROJECT_DIR$/components/wedding/WeddingTemplatePreview.vue" />
-        <option value="$PROJECT_DIR$/store/index.js" />
         <option value="$PROJECT_DIR$/components/common/GuestInfoItem.vue" />
         <option value="$PROJECT_DIR$/components/common/GuestInfoInput.vue" />
         <option value="$PROJECT_DIR$/pages/weddings/index.vue" />
-        <option value="$PROJECT_DIR$/pages/user-events/_eventId/index.vue" />
         <option value="$PROJECT_DIR$/components/guests/guestAnnswerList.vue" />
+        <option value="$PROJECT_DIR$/pages/index.vue" />
+        <option value="$PROJECT_DIR$/components/user/UserEvents.vue" />
+        <option value="$PROJECT_DIR$/pages/user-events/_eventId/index.vue" />
+        <option value="$PROJECT_DIR$/store/index.js" />
       </list>
     </option>
   </component>
@@ -224,9 +224,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="863" />
-    <option name="y" value="16" />
-    <option name="width" value="1064" />
+    <option name="x" value="834" />
+    <option name="width" value="1093" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -433,7 +432,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209067000" />
+    <option name="totallyTimeSpent" value="211540000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -445,46 +444,57 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="863" y="16" width="1064" height="1047" extended-state="0" />
+    <frame x="834" y="0" width="1093" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.82011837" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.20132013" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50071734" side_tool="true" visible="true" weight="0.04840484" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50236964" side_tool="true" visible="true" weight="0.04840484" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49928263" weight="0.3278328" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32893288" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.23542354" />
       <window_info id="Structure" order="1" sideWeight="0.1800948" side_tool="true" weight="0.019494204" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4985653" weight="0.04840484" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49763033" visible="true" weight="0.04840484" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" sideWeight="0.18300654" side_tool="true" visible="true" weight="0.16227607" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.82011837" visible="true" weight="0.0" />
+      <window_info id="Structure" order="1" sideWeight="0.1800948" side_tool="true" weight="0.019494204" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.20132013" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32893288" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23542354" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49928263" weight="0.3278328" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50071734" side_tool="true" visible="true" weight="0.04840484" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4985653" weight="0.04840484" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" sideWeight="0.18300654" side_tool="true" visible="true" weight="0.16227607" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23542354" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.82011837" visible="true" weight="0.019494204" />
       <window_info id="Structure" order="1" sideWeight="0.1800948" side_tool="true" visible="true" weight="0.019494204" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.20132013" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3278496" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32893288" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23542354" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.079520695" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32893288" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3278496" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -609,13 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/wedding/WeddingTemplatesPreview.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -644,31 +647,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/UserEventPreview.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/UserEvents.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/createEvent/EventTemplatePreview.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/wedding/WeddingTemplatePreview.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="84" column="26" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -679,41 +661,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/wedding/CheckDialog.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="131" column="14" lean-forward="true" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/common/GuestInfoInput.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="11" lean-forward="true" selection-start-line="67" selection-start-column="11" selection-end-line="67" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user-events/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -734,9 +685,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/components/common/GuestInfoInput.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="67" column="11" lean-forward="true" selection-start-line="67" selection-start-column="11" selection-end-line="67" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/common/GuestInfoItem.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1237">
+          <caret line="56" column="34" lean-forward="true" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/weddings/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="-1258">
           <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
           <folding>
             <element signature="e#3570#3656#0" expanded="true" />
@@ -744,31 +709,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index.vue">
+    <entry file="file://$PROJECT_DIR$/components/wedding/WeddingTemplatePreview.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        <state relative-caret-position="212">
+          <caret line="84" column="26" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/wedding/WeddingInfoGetter.vue">
+    <entry file="file://$PROJECT_DIR$/components/wedding/WeddingTemplatesPreview.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="251" column="53" lean-forward="true" selection-start-line="251" selection-start-column="53" selection-end-line="251" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/page-blocks/AddNewEvents.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" lean-forward="true" selection-end-line="39" />
+        <state relative-caret-position="532">
+          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/navigation/ToolBar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="85">
           <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/wedding/CheckDialog.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/page-blocks/AddNewEvents.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/guests/guestAnnswerList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="10" lean-forward="true" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/wedding/WeddingInfoGetter.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="908">
+          <caret line="251" column="53" lean-forward="true" selection-start-line="251" selection-start-column="53" selection-end-line="251" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -779,27 +765,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/common/GuestInfoItem.vue">
+    <entry file="file://$PROJECT_DIR$/components/user/UserEventPreview.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1653">
-          <caret line="127" column="8" lean-forward="true" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="8" />
+        <state relative-caret-position="119">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/user-events/_eventId/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="63" column="37" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
+        <state relative-caret-position="450">
+          <caret line="35" column="6" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="35" selection-end-column="6" />
           <folding>
-            <element signature="e#2013#2038#0" expanded="true" />
+            <element signature="e#864#889#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/guests/guestAnnswerList.vue">
+    <entry file="file://$PROJECT_DIR$/pages/user-events/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
+        <state relative-caret-position="340">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/user/UserEvents.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="95" column="8" lean-forward="true" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
+          <folding>
+            <element signature="e#1628#1693#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

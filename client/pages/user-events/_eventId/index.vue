@@ -28,7 +28,6 @@
     asyncData(context) {
       return axios.get(`${context.env.baseUrl}/events/${context.params.eventId}`)
         .then((res) => {
-
           return {
             event: res.data[0],
           }

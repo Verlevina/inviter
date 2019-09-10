@@ -78,8 +78,18 @@
 
 <script>
   import UserEventPreview from '~/components/user/UserEventPreview'
-
+import axios from 'axios'
   export default {
+    beforeMount () {
+      axios.get(`${process.env.baseUrl}${process.env.API.events}`)
+        .then( res => {
+          this.$store.dispatch('clearUserEvents')
+          res.data.forEach(event => {
+            this.$store.dispatch('setUserEvent', event)
+          } )
+        })
+        .catch(e => console.error(e))
+    },
     computed: {
       futureUserEvents() {
         return this.$store.getters.getFutureUserEvents

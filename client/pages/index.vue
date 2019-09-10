@@ -19,19 +19,11 @@ import axios from "axios"
 
 export default {
 fetch ({ store, params }) {
-  if (store.state.partyTypes.length === 0 ){
     return axios.get(`${process.env.baseUrl}${process.env.API.partyTypes}`)
       .then(res => {
       store.dispatch('setPartyTypes', res.data)
-      return axios.get(`${process.env.baseUrl}${process.env.API.events}`)
     })
-      .then(res => {
-          res.data.forEach(event => {
-            store.dispatch('setUserEvent', event)
-          } )
-      })
       .catch(e => console.error(e))
-  }
 },
   components: {
     UserPreview,

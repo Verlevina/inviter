@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.send([
     {
       id: 1,
-      url: 'http://bezgrusti.ru/images/article/7149/%D1%81%D0%B2%D0%B0%D0%B4%D1%8C%D0%B1%D0%B0%20%D0%B2%D0%B5%D0%BA%D0%B0.jpg',
+      url: 'https://loveiscomix.com/static/libnk/20090103.gif',
       title: 'Wedding',
       shortDescription: 'Perspiciatis, voluptatibus!',
       link: 'weddings',

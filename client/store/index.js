@@ -46,6 +46,9 @@ const store = () => {
       templates: {}
     },
     mutations: {
+      clearUserEvents (state) {
+        state.user.userEvents = []
+      },
       completeCreatingEvent(state) {
         state.user.currentEvent.complete = true
       },
@@ -130,7 +133,10 @@ const store = () => {
       }
     },
     actions: {
-      completeEvent(vuexContext) {
+      clearUserEvents (vuexContext) {
+        vuexContext.commit('clearUserEvents')
+      },
+      completeEvent (vuexContext) {
         vuexContext.commit('completeEvent')
       },
 
