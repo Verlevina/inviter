@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bcac005-098e-4c3c-900c-5e89aac70391" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/components/guests/guestAnnswerList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/markupTemplates.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/components/guests/guestAnnswerList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/components/guests/guestAnnswerList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/pages/user-events/_eventId/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/pages/user-events/_eventId/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/pages/weddings/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/pages/weddings/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/invite.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/invite.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />

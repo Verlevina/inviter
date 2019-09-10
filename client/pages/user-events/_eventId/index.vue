@@ -14,16 +14,6 @@
     <p>address <strong>{{event.eventInfo.address}}</strong></p>
     <p>message <strong>{{event.eventInfo.message}}</strong></p>
 
-    <p
-      v-for="guest in event.guestsList"
-      :key="guest._id"
-    >
-      {{guest.name}} + {{guest.surname}} + {{guest.fathername}}
-      ++++ {{guest.email}} +++++++++++++{{ answer(guest.answer.isCome)}}|||||||||||||||||{{guest.answer.message}}
-      ----<a
-      target="_blank"
-      :href="guest.inviteUrl">invite Sheet</a>
-    </p>
   <guestAnnswerList
     :guests="event.guestsList"
     :answer="answer"
@@ -48,15 +38,31 @@
     methods: {
       answer(answer) {
         if (answer === '') {
-          return 'No Answer yet'
+          return {
+            text: 'No Answer yet',
+            color: 'grey',
+            icon: 'alarm'
+          }
         }
         if (answer === 'No') {
-          return 'cannt come'
+          return {
+            text: 'can`nt come',
+              color: 'red',
+            icon: 'highlight_off'
+          }
         }
         if (answer === 'Maybe') {
-          return answer
+          return  {
+            text: 'Maybe',
+            color: 'yellow',
+            icon: 'help_outline'
+          }
         }
-        return 'yes'
+        return  {
+          text: 'yes',
+          color: 'green',
+          icon: 'check_circle_outline'
+        }
       }
     },
     components: {
