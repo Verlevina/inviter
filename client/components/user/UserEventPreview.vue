@@ -7,7 +7,7 @@
 
   >
     <v-img
-      src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
+      :src="userEvent.templateUrl"
       aspect-ratio="2.75"
     ></v-img>
 

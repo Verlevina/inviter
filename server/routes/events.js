@@ -1,17 +1,17 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const Event = require('../models/event');
-
+const Templates = require('../models/templates')
 
 /* GET users listing. */
 router.post('/', function (req, res, next) {
   if (req.body._id) {
-  if (req.body.complete) {
-    req.body.guestsList.forEach(guest => {
-      //TODO: function mail sending
-      console.log('mail SENDING to' + guest.email)
-    })
-  }
+    if (req.body.complete) {
+      req.body.guestsList.forEach(guest => {
+        //TODO: function mail sending
+        console.log('mail SENDING to' + guest.email)
+      })
+    }
     const updatedEvent = {...req.body};
     Event.findOne({_id: req.body._id}, (err, event) => {
       event.eventInfo = updatedEvent.eventInfo
@@ -70,8 +70,32 @@ router.get('/', function (req, res, next) {
     if (err) {
       res.status(500).json(err)
     } else {
-      console.log('success')
-      res.status(201).send(events)
+      Templates.find({}, (err, templates) => {
+        if (err) {
+          res.status(500).json(err)
+        } else {
+          const sendEvents = []
+          events.forEach(event => {
+
+            const url = templates.find(template => {
+              return template.name.toUpperCase() === event.templateId.toUpperCase()
+            }).src;
+            sendEvents.push({
+              ...event,
+              eventInfo: event.eventInfo,
+              partyType: event.partyType,
+              templateId: event.templateId,
+              complete: event.complete,
+              guestsList:event.guestsList,
+              templateUrl: url,
+              last_updated: event.last_updated,
+              _id: event._id
+            })
+          })
+          console.log('success')
+          res.status(201).send(sendEvents)
+        }
+      })
     }
   })
 })
