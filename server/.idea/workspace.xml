@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2bcac005-098e-4c3c-900c-5e89aac70391" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/pages/user-events/_eventId/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/pages/user-events/_eventId/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/pages/user-events/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/pages/user-events/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/components/guests/guestAnnswerList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/components/guests/guestAnnswerList.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -179,8 +178,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="706" />
-    <option name="y" value="115" />
+    <option name="x" value="541" />
+    <option name="y" value="281" />
     <option name="width" value="1283" />
     <option name="height" value="1047" />
   </component>
@@ -337,7 +336,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="706" y="115" width="1283" height="1047" extended-state="1" />
+    <frame x="541" y="281" width="1283" height="1047" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8997821" visible="true" weight="0.20160642" />
